@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../support.js"></script>
+<link rel="alternate" hreflang="en" href="https://youreditor.uk/en/portofoliu.html"><link rel="alternate" hreflang="de" href="https://youreditor.uk/de/portofoliu.html"><link rel="alternate" hreflang="x-default" href="https://youreditor.uk/en/portofoliu.html"></head>
+<body>
+<x-dc>
+<helmet>
+<title>Your Editor — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#000;color:#f4f1ea;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:clip}
+a{color:inherit;text-decoration:none}
+a:hover{color:inherit}
+h1,h2,h3{margin:0}
+@keyframes etLines{from{background-position:0 0}to{background-position:220px 0}}
+@media(max-width:768px),(prefers-reduced-motion:reduce){[data-anim]{animation:none!important}}
+</style>
+</helmet>
+<div style="position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(circle at 50% 52%, rgba(255,196,0,0.12), transparent 32%),radial-gradient(circle at 50% 120%, rgba(255,196,0,0.06), transparent 46%),linear-gradient(180deg,#0a0908 0%,#000 60%)"></div>
+<div data-anim="1" style="position:fixed;inset:0;z-index:0;pointer-events:none;background:repeating-linear-gradient(115deg, rgba(234,236,239,0.045) 0px, rgba(234,236,239,0.045) 1px, transparent 1px, transparent 18px);opacity:0.20;transform:scale(1.1);animation:etLines 16s linear infinite;-webkit-mask-image:linear-gradient(to bottom,#000 42%,transparent 60%);mask-image:linear-gradient(to bottom,#000 42%,transparent 60%)"></div>
+<div style="position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(circle at 50% 48%, transparent 50%, rgba(0,0,0,0.74) 100%)"></div>
+
+<nav style="position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(0,0,0,0.55);border-bottom:1px solid rgba(234,236,239,0.12)">
+  <div style="max-width:1180px;margin:0 auto;padding:15px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+    <a href="index.html" style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:20px;letter-spacing:0.04em;text-transform:uppercase;;color:#f4f1ea">Your <span style="color:#ffc400">Editor</span></a>
+    <sc-if value="{{ desk }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex;align-items:center;gap:26px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase">
+        <a href="cum-lucram.html" style="color:rgba(234,236,239,0.70);transition:color .2s ease" style-hover="color:#f4f1ea">How we work</a>
+        <a href="#" style="color:#ffc400">Portfolio</a>
+        <a href="instrumente.html" style="color:rgba(234,236,239,0.70);transition:color .2s ease" style-hover="color:#f4f1ea">Tools</a>
+        <a href="tarife.html" style="color:rgba(234,236,239,0.70);transition:color .2s ease" style-hover="color:#f4f1ea">Pricing</a>
+        <a href="tarife.html#contact" style="color:rgba(234,236,239,0.70);transition:color .2s ease" style-hover="color:#f4f1ea">Contact</a><span class="lang-sw" style="display:inline-flex;gap:7px;align-items:center;margin-left:16px;font-size:13px;letter-spacing:.06em;vertical-align:middle"><a href="../en/portofoliu.html" style="color:#ffc400;font-weight:700;text-decoration:none">EN</a><span style="opacity:.35">/</span><a href="../de/portofoliu.html" style="color:rgba(234,236,239,0.6);text-decoration:none">DE</a></span>
+      </div>
+    </sc-if>
+    <sc-if value="{{ mob }}" hint-placeholder-val="{{ false }}">
+      <button onClick="{{ toggleMenu }}" aria-label="Meniu" style="width:44px;height:44px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;border:none;background:transparent;cursor:pointer;padding:0;position:relative;z-index:140">
+        <span style="display:block;width:24px;height:2px;background:#f4f1ea;border-radius:2px;transition:transform .3s ease;transform:{{ bar1 }}"></span>
+        <span style="display:block;width:24px;height:2px;background:#f4f1ea;border-radius:2px;transition:opacity .2s ease;opacity:{{ bar2 }}"></span>
+        <span style="display:block;width:24px;height:2px;background:#f4f1ea;border-radius:2px;transition:transform .3s ease;transform:{{ bar3 }}"></span>
+      </button>
+    </sc-if>
+  </div>
+</nav>
+
+<div aria-hidden="{{ menuHidden }}" style="position:fixed;inset:0;z-index:130;background:rgba(7,7,7,0.985);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .28s ease;opacity:{{ menuOpacity }};pointer-events:{{ menuPE }}">
+  <div style="display:flex;flex-direction:column;align-items:center;gap:6px;font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(32px,9vw,50px);line-height:1.22;letter-spacing:0.02em;text-transform:uppercase">
+    <a href="index.html" onClick="{{ closeMenu }}" style="padding:8px 18px;color:#f4f1ea">Home</a>
+    <a href="cum-lucram.html" onClick="{{ closeMenu }}" style="padding:8px 18px;color:#f4f1ea">How we work</a>
+    <a href="#" onClick="{{ closeMenu }}" style="padding:8px 18px;color:#ffc400">Portfolio</a>
+    <a href="instrumente.html" onClick="{{ closeMenu }}" style="padding:8px 18px;color:#f4f1ea">Tools</a>
+    <a href="tarife.html" onClick="{{ closeMenu }}" style="padding:8px 18px;color:#f4f1ea">Pricing</a>
+    <a href="tarife.html#contact" onClick="{{ closeMenu }}" style="padding:8px 18px;color:#f4f1ea">Contact</a><span class="lang-sw" style="display:inline-flex;gap:7px;align-items:center;margin-left:16px;font-size:13px;letter-spacing:.06em;vertical-align:middle"><a href="../en/portofoliu.html" style="color:#ffc400;font-weight:700;text-decoration:none">EN</a><span style="opacity:.35">/</span><a href="../de/portofoliu.html" style="color:rgba(234,236,239,0.6);text-decoration:none">DE</a></span>
+  </div>
+  <div style="margin-top:30px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+    <a href="https://wa.me/37379840751" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(234,236,239,0.70);border:1px solid rgba(234,236,239,0.16);border-radius:9999px;padding:12px 20px">WhatsApp</a>
+    <a href="https://t.me/alexqabl" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(234,236,239,0.70);border:1px solid rgba(234,236,239,0.16);border-radius:9999px;padding:12px 20px">Telegram</a>
+  </div>
+</div>
+
+<div style="position:relative;z-index:1">
+
+  <sc-if value="{{ desk }}" hint-placeholder-val="{{ true }}">
+    <section style="position:relative;min-height:100vh;overflow:hidden;display:flex;flex-direction:column;align-items:center;padding-bottom:28px" data-screen-label="Journey">
+      <div style="position:absolute;top:84px;left:34px;right:34px;text-align:center;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(234,236,239,0.48);z-index:5">Wedding films edited · selection 2024 / 2026</div>
+
+      <div ref="{{ wordRef }}" style="position:absolute;top:clamp(96px,12vh,140px);left:0;right:0;display:flex;justify-content:center;font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(44px,10.5vw,138px);line-height:0.8;letter-spacing:0.02em;text-transform:uppercase;color:rgba(244,241,234,0.95);z-index:1;pointer-events:none;">
+        <span style="display:inline-block">P</span><span style="display:inline-block">O</span><span style="display:inline-block">R</span><span style="display:inline-block">T</span><span style="display:inline-block">O</span><span style="display:inline-block">F</span><span style="display:inline-block">O</span><span style="display:inline-block">L</span><span style="display:inline-block">I</span><span style="display:inline-block">U</span>
+      </div>
+
+      <div ref="{{ stageRef }}" onPointerDown="{{ dragStart }}" style="position:relative;width:100%;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:clamp(250px,34vh,360px) 0 0;cursor:{{ cursor }};touch-action:pan-y">
+        <div ref="{{ drumRef }}" style="position:relative">
+          <div style="perspective:1600px">
+            <div ref="{{ ringRef }}" style="position:relative;margin:0 auto;transform-style:preserve-3d;width:{{ pwPx }};height:{{ phPx }}">
+              <sc-for list="{{ panels }}" as="p" hint-placeholder-count="8">
+                <div onClick="{{ p.open }}" onMouseEnter="{{ p.enter }}" onMouseLeave="{{ p.leave }}" style="position:absolute;top:0;left:0;width:{{ pwPx }};height:{{ phPx }};transform:{{ p.tf }};border-radius:24px;overflow:hidden;background:#0a0a0a;border:1px solid {{ p.border }};box-shadow:{{ p.shadow }};-webkit-backface-visibility:hidden;backface-visibility:hidden;cursor:pointer;transition:border-color .4s ease,box-shadow .4s ease">
+                  <img src="{{ p.poster }}" alt="{{ p.title }}" draggable="false" style="width:100%;height:100%;object-fit:cover;display:block;transition:filter .5s ease;filter:{{ p.imgF }}">
+                  <div style="position:absolute;inset:0;pointer-events:none;z-index:1;background:linear-gradient(90deg,rgba(0,0,0,0.55),transparent 16%,transparent 84%,rgba(0,0,0,0.55)),linear-gradient(180deg,rgba(255,255,255,0.10),transparent 26%,transparent 72%,rgba(0,0,0,0.28)),radial-gradient(130% 90% at 50% 42%,transparent 55%,rgba(0,0,0,0.35))"></div>
+                  <div style="position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;padding:0 8px;text-align:center;font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(22px,2.4vw,40px);text-transform:uppercase;letter-spacing:0.02em;color:rgba(244,241,234,0.86);text-shadow:0 4px 30px rgba(0,0,0,0.6);pointer-events:none;transition:opacity .4s ease;opacity:{{ p.catOp }}">{{ p.title }}</div>
+                  <div style="position:absolute;inset:0;z-index:3;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;font-weight:500;letter-spacing:0.32em;text-transform:uppercase;color:#ffc400;background:rgba(0,0,0,0.34);pointer-events:none;transition:opacity .35s ease;opacity:{{ p.viewOp }}">Watch the film</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+        <div style="position:absolute;top:0;bottom:0;left:0;width:20%;z-index:6;pointer-events:none;background:linear-gradient(90deg,#000 1%,transparent)"></div>
+        <div style="position:absolute;top:0;bottom:0;right:0;width:20%;z-index:6;pointer-events:none;background:linear-gradient(270deg,#000 1%,transparent)"></div>
+      </div>
+
+      <div style="position:absolute;left:0;right:0;bottom:0;height:50%;z-index:4;pointer-events:none;background:linear-gradient(180deg, transparent 0%, rgba(7,6,5,0.5) 26%, rgba(4,3,2,0.86) 64%, #000 100%)"></div>
+
+      <div style="position:relative;margin-top:28px;display:flex;align-items:center;gap:14px;z-index:7">
+        <button onClick="{{ prev }}" aria-label="Previous" style="width:48px;height:48px;border-radius:50%;border:1px solid rgba(234,236,239,0.16);background:rgba(0,0,0,0.4);color:#f4f1ea;font-size:18px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .2s ease,background .2s ease,color .2s ease" style-hover="border-color:rgba(255,196,0,0.6);background:rgba(255,196,0,0.06);color:#ffc400">←</button>
+        <div style="display:flex;align-items:center;gap:14px;border:1px solid rgba(234,236,239,0.16);background:rgba(0,0,0,0.4);border-radius:9999px;padding:14px 20px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)">
+          <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.12em;color:rgba(234,236,239,0.70)">{{ idxLabel }}</div>
+        </div>
+        <button onClick="{{ next }}" aria-label="Next" style="width:48px;height:48px;border-radius:50%;border:1px solid rgba(234,236,239,0.16);background:rgba(0,0,0,0.4);color:#f4f1ea;font-size:18px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .2s ease,background .2s ease,color .2s ease" style-hover="border-color:rgba(255,196,0,0.6);background:rgba(255,196,0,0.06);color:#ffc400">→</button>
+      </div>
+      <div style="position:relative;margin-top:18px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(234,236,239,0.48);z-index:7;">Drag or use the arrows to rotate</div>
+      <div style="position:relative;z-index:5;width:min(1124px,calc(100% - 56px));margin-top:clamp(56px,8vh,88px)" data-screen-label="Details">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(234,236,239,0.48);margin-bottom:14px"><span style="display:flex;align-items:center;gap:10px"><span style="color:#ffc400">✦</span> Project sheet</span></div>
+        <div style="display:flex;flex-wrap:wrap;border-top:1px solid rgba(234,236,239,0.16);border-bottom:1px solid rgba(234,236,239,0.16);background:rgba(0,0,0,0.35);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)">
+          <div style="flex:1.6 1 240px;padding:20px 24px 20px 0;display:flex;align-items:center;gap:14px"><span style="width:8px;height:8px;border-radius:50%;background:#ffc400;box-shadow:0 0 10px rgba(255,196,0,0.4);flex:none"></span><div><div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(234,236,239,0.48)">Format</div><div style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(22px,2.2vw,30px);text-transform:uppercase;letter-spacing:0.01em;line-height:1;margin-top:8px;color:#ffc400">{{ cur.type }}</div></div></div>
+          <div style="flex:1 1 150px;padding:20px 24px;border-left:1px solid rgba(234,236,239,0.09)"><div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(234,236,239,0.48)">Delivery</div><div style="font-size:18px;font-weight:600;margin-top:8px;">{{ cur.turnaround }}</div></div>
+          <div style="flex:1 1 150px;padding:20px 24px;border-left:1px solid rgba(234,236,239,0.09)"><div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(234,236,239,0.48)">Raw footage</div><div style="font-size:18px;font-weight:600;margin-top:8px;">{{ cur.footage }}</div></div>
+          <div style="flex:1 1 150px;padding:20px 24px;border-left:1px solid rgba(234,236,239,0.09)"><div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(234,236,239,0.48)">Cameras</div><div style="font-size:18px;font-weight:600;margin-top:8px;">{{ cur.cameras }}</div></div>
+          <div style="flex:1.6 1 240px;padding:20px 0 20px 24px;border-left:1px solid rgba(234,236,239,0.09)"><div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(234,236,239,0.48)">Workflow</div><div style="display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:9px">
+            <sc-for list="{{ cur.tags }}" as="t" hint-placeholder-count="4"><span style="display:inline-flex;align-items:center;gap:7px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#f4f1ea"><span style="width:5px;height:5px;border-radius:50%;background:#ffc400;flex:none"></span>{{ t }}</span></sc-for>
+          </div></div>
+        </div>
+      </div>
+    </section>
+
+  </sc-if>
+
+  <sc-if value="{{ mob }}" hint-placeholder-val="{{ false }}">
+    <section style="padding:104px 0 clamp(60px,9vw,116px);border-top:1px solid rgba(234,236,239,0.09);background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(8,7,6,0.6) 100%)" data-screen-label="Gallery">
+      <div style="max-width:1180px;margin:0 auto;padding:0 28px">
+        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:rgba(234,236,239,0.48);display:flex;align-items:center;gap:12px;margin-bottom:18px"><span style="color:#ffc400">✦</span> Selection 2024 / 2026</div>
+        <h2 style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(32px,5vw,72px);font-weight:400;line-height:1.04;text-transform:uppercase">Portfolio</h2>
+        <p style="color:rgba(234,236,239,0.70);font-size:16px;line-height:1.55;max-width:560px;margin:16px 0 0;text-wrap:pretty">A few projects edited end to end. Tap any to watch the film.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:30px">
+          <sc-for list="{{ panels }}" as="p" hint-placeholder-count="8">
+            <button type="button" onClick="{{ p.open }}" aria-label="Play: {{ p.title }}" style="position:relative;display:block;width:100%;aspect-ratio:16/9;margin:0;padding:0;border:1px solid rgba(234,236,239,0.16);border-radius:14px;overflow:hidden;background:#0a0a0a;cursor:pointer;font:inherit;color:inherit">
+              <img src="{{ p.poster }}" alt="{{ p.title }}" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(0.42) brightness(0.74)">
+              <span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 38%,rgba(0,0,0,0.66) 100%)"></span>
+              <span style="position:absolute;left:12px;bottom:11px;font-family:'Anton','Arial Black',Impact,sans-serif;font-size:13px;text-transform:uppercase;letter-spacing:0.02em;color:#f4f1ea;text-shadow:0 4px 24px rgba(0,0,0,0.7)">{{ p.title }}</span>
+            </button>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+
+  <footer style="border-top:1px solid rgba(234,236,239,0.12)">
+    <div style="max-width:1180px;margin:0 auto;padding:56px 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px;align-items:start">
+      <div>
+        <div style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:22px;letter-spacing:0.04em;text-transform:uppercase">Your <span style="color:#ffc400">Editor</span></div>
+        <p style="margin:14px 0 0;color:rgba(234,236,239,0.50);font-size:14px;line-height:1.6;max-width:260px">Outsourced post-production for wedding videographers.</p>
+      </div>
+      <div>
+        <div style="color:rgba(234,236,239,0.50);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:14px">Contact</div>
+        <div style="display:flex;flex-direction:column;gap:13px;margin-top:2px;font-size:15px;line-height:1.3">
+          <a href="https://wa.me/37379840751" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;color:rgba(234,236,239,0.70);transition:color .2s ease" style-hover="color:#ffc400">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M21 16.5v2.6a1.7 1.7 0 0 1-1.9 1.7 17 17 0 0 1-7.4-2.6 16.7 16.7 0 0 1-5.1-5.1A17 17 0 0 1 4 5.7 1.7 1.7 0 0 1 5.7 4h2.6a1.7 1.7 0 0 1 1.7 1.5c.1.8.3 1.5.6 2.2a1.7 1.7 0 0 1-.4 1.8l-1 1a13.5 13.5 0 0 0 5.1 5.1l1-1a1.7 1.7 0 0 1 1.8-.4c.7.3 1.4.5 2.2.6a1.7 1.7 0 0 1 1.4 1.7z"></path></svg>
+            <span>WhatsApp</span>
+          </a>
+          <a href="https://t.me/alexqabl" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;color:rgba(234,236,239,0.70);transition:color .2s ease" style-hover="color:#ffc400">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M21 4 10.5 14.5"></path><path d="M21 4 14.5 21l-4-8.5L2 8.5 21 4z"></path></svg>
+            <span>Telegram</span>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61591004736764&amp;locale=ru_RU" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;color:rgba(234,236,239,0.70);transition:color .2s ease" style-hover="color:#ffc400">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M17 3h-3a4 4 0 0 0-4 4v3H7v4h3v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h2z"></path></svg>
+            <span>Facebook</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1180px;margin:0 auto;padding:0 28px 40px;color:rgba(234,236,239,0.26);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.04em">© 2026 Your Editor</div>
+  </footer>
+</div>
+
+<div ref="{{ playerRef }}" style="position:fixed;inset:0;z-index:150;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none">
+  <div onClick="{{ closePlayer }}" style="position:absolute;inset:0;background:rgba(0,0,0,0.92)"></div>
+  <button onClick="{{ closePlayer }}" aria-label="Close" style="position:absolute;top:{{ closeOff }};right:{{ closeOff }};width:46px;height:46px;border-radius:50%;border:1px solid rgba(234,236,239,0.16);background:rgba(0,0,0,0.5);color:#f4f1ea;font-size:17px;cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center;transition:border-color .2s ease,color .2s ease,background .2s ease" style-hover="border-color:rgba(255,196,0,0.6);color:#ffc400;background:rgba(255,196,0,0.06)">✕</button>
+  <div ref="{{ frameRef }}" style="position:relative;width:{{ frameW }};aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000;border:1px solid rgba(255,196,0,0.42);box-shadow:0 50px 150px rgba(0,0,0,0.8),0 0 0 1px rgba(255,196,0,0.18),0 0 90px rgba(255,196,0,0.10);transform:scale(0.82);opacity:0">
+    <sc-if value="{{ hasVideo }}" hint-placeholder-val="{{ false }}">
+      <video ref="{{ videoRef }}" src="{{ pItem.video }}" poster="{{ pItem.poster }}" controls="{{ true }}" playsInline="{{ true }}" preload="none" style="width:100%;height:100%;object-fit:contain;background:#000;display:block"></video>
+    </sc-if>
+    <sc-if value="{{ noVideo }}" hint-placeholder-val="{{ false }}">
+      <img src="{{ pItem.poster }}" alt="{{ pItem.title }}" style="width:100%;height:100%;object-fit:cover;display:block">
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(244,241,234,0.78);background:rgba(0,0,0,0.42);pointer-events:none">Video coming soon</div>
+    </sc-if>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const FALLBACK = [
+  { title: 'Full film', poster: 'https://picsum.photos/seed/et-nunta-1/800/450', video: '', type: 'Full film', turnaround: '4 days', footage: '12 h', cameras: '2', tags: ['Multicam', 'Sync', 'Sound', 'Color'] },
+  { title: 'Teaser', poster: 'https://picsum.photos/seed/et-nunta-2/800/450', video: '', type: 'Teaser', turnaround: '1 day', footage: '6 h', cameras: '1', tags: ['Sync', 'Color'] },
+  { title: 'Save the date', poster: 'https://picsum.photos/seed/et-nunta-3/800/450', video: '', type: 'Save the date', turnaround: '2 days', footage: '5 h', cameras: '1', tags: ['Sync', 'Color'] },
+  { title: 'Same day edit', poster: 'https://picsum.photos/seed/et-nunta-4/800/450', video: '', type: 'Same day edit', turnaround: 'same day', footage: '6 h', cameras: '2', tags: ['Multicam', 'Sync', 'Color'] },
+  { title: 'Wedding ceremony', poster: 'https://picsum.photos/seed/et-nunta-5/800/450', video: '', type: 'Wedding ceremony', turnaround: '5 days', footage: '18 h', cameras: '3', tags: ['Multicam', 'Sync', 'Sound', 'Color'] },
+  { title: 'After movie', poster: 'https://picsum.photos/seed/et-nunta-6/800/450', video: '', type: 'After movie', turnaround: '3 days', footage: '10 h', cameras: '2', tags: ['Sync', 'Sound', 'Color'] },
+  { title: 'Party', poster: 'https://picsum.photos/seed/et-nunta-7/800/450', video: '', type: 'Party', turnaround: '3 days', footage: '14 h', cameras: '2', tags: ['Multicam', 'Sync', 'Color'] },
+  { title: 'Story', poster: 'https://picsum.photos/seed/et-nunta-8/800/450', video: '', type: 'Story', turnaround: '2 days', footage: '5 h', cameras: '1', tags: ['Sync', 'Color'] },
+];
+class Component extends DCLogic {
+  state = { w: typeof window !== 'undefined' ? window.innerWidth : 1280, menu: false, items: FALLBACK, idx: 0, hover: -1, open: false, item: null, dragging: false };
+  wordRef = React.createRef(); stageRef = React.createRef(); drumRef = React.createRef(); ringRef = React.createRef();
+  playerRef = React.createRef(); frameRef = React.createRef(); videoRef = React.createRef();
+  angle = 0; target = 0; drag = false; moved = false; pp = 0; rc = [];
+  componentDidMount() {
+    this.reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.fine = window.matchMedia('(pointer:fine)').matches;
+    this.onResize = () => { this.setState({ w: window.innerWidth }); clearTimeout(this.mt); this.mt = setTimeout(() => this.meas(), 220); };
+    this.onMove = e => {
+      this.mx = e.clientX; this.my = e.clientY;
+      if (!this.drag) return;
+      const dx = e.clientX - this.startX;
+      if (Math.abs(dx) > 3) this.moved = true;
+      this.angle = this.startAngle + dx * 0.3; this.target = this.angle;
+    };
+    this.onUp = () => { if (!this.drag) return; this.drag = false; this.setState({ dragging: false }); this.snap(); };
+    this.onKey = e => {
+      if (e.key === 'Escape') { this.closePlayer(); this.setMenu(false); }
+      if (this.state.w > 768 && !this.state.open) { if (e.key === 'ArrowLeft') this.step(1); if (e.key === 'ArrowRight') this.step(-1); }
+    };
+    this.onWheel = e => {
+      if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+      e.preventDefault();
+      this.target += e.deltaX * 0.2;
+      clearTimeout(this.wt); this.wt = setTimeout(() => this.snap(), 140);
+    };
+    window.addEventListener('resize', this.onResize);
+    window.addEventListener('pointermove', this.onMove);
+    window.addEventListener('pointerup', this.onUp);
+    window.addEventListener('pointercancel', this.onUp);
+    window.addEventListener('keydown', this.onKey);
+    this.bindWheel();
+    setTimeout(() => this.meas(), 320);
+    fetch('../portfolio.json', { cache: 'no-cache' }).then(r => { if (!r.ok) throw 0; return r.json(); }).then(d => {
+      const items = (Array.isArray(d) ? d : (d && d.items) || []).filter(it => it && (it.poster || it.video));
+      if (items.length) this.setState({ items });
+    }).catch(() => {});
+    const loop = () => { this.tick(); this.raf = requestAnimationFrame(loop); };
+    loop();
+  }
+  componentDidUpdate(pp, ps) {
+    this.bindWheel();
+    if (this.state.open && !ps.open && this.videoRef.current) { try { const p = this.videoRef.current.play(); p && p.catch && p.catch(() => {}); } catch (e) {} }
+    if (ps.w !== this.state.w) this.meas();
+  }
+  bindWheel() {
+    const el = this.stageRef.current;
+    if (el === this.wheelEl) return;
+    if (this.wheelEl) this.wheelEl.removeEventListener('wheel', this.onWheel);
+    this.wheelEl = el; if (el) el.addEventListener('wheel', this.onWheel, { passive: false });
+  }
+  componentWillUnmount() {
+    cancelAnimationFrame(this.raf);
+    window.removeEventListener('resize', this.onResize); window.removeEventListener('pointermove', this.onMove);
+    window.removeEventListener('pointerup', this.onUp); window.removeEventListener('pointercancel', this.onUp);
+    window.removeEventListener('keydown', this.onKey);
+    if (this.wheelEl) this.wheelEl.removeEventListener('wheel', this.onWheel);
+    document.body.style.overflow = '';
+  }
+  meas() {
+    const box = this.wordRef.current; if (!box) { this.rc = []; return; }
+    const sy = window.pageYOffset;
+    this.rc = Array.from(box.children).map(el => {
+      const pv = el.style.transform; el.style.transform = 'none';
+      const r = el.getBoundingClientRect(); el.style.transform = pv;
+      return { el, cx: r.left + r.width / 2, cy: r.top + r.height / 2 + sy, tx: 0, ty: 0, tr: 0 };
+    });
+  }
+  dims() {
+    const N = this.state.items.length, pw = Math.min(480, this.state.w * 0.74);
+    return { N, pw, ph: Math.round(pw * 9 / 16), r: Math.round((pw / 2) / Math.tan(Math.PI / N)), th: 360 / N };
+  }
+  activeIndex() { const { N, th } = this.dims(); return ((Math.round(-this.target / th)) % N + N) % N; }
+  snap() { const { th } = this.dims(); this.target = Math.round(this.target / th) * th; }
+  step(dir) { const { th } = this.dims(); this.target += dir * th; }
+  tick() {
+    const ring = this.ringRef.current;
+    if (ring) {
+      const { r, th } = this.dims();
+      if (!this.drag) { this.angle = this.reduce ? this.target : this.angle + (this.target - this.angle) * 0.12; if (Math.abs(this.target - this.angle) < 0.02) this.angle = this.target; }
+      ring.style.transform = `translateZ(${-r}px) rotateY(${this.angle}deg)`;
+      Array.from(ring.children).forEach((p, i) => {
+        const c = Math.cos((i * th + this.angle) * Math.PI / 180);
+        p.style.opacity = Math.max(0, 0.12 + 0.88 * c).toFixed(3);
+        p.style.filter = `brightness(${(0.5 + 0.5 * Math.max(0, c)).toFixed(3)}) grayscale(${c > 0.92 ? 0 : 0.4})`;
+        p.style.zIndex = Math.round(100 + 100 * c);
+      });
+      const idx = this.activeIndex();
+      if (idx !== this.state.idx) this.setState({ idx });
+    }
+    const tgt = this.state.open ? 1 : 0;
+    if (Math.abs(tgt - this.pp) >= 0.0005) {
+      this.pp += (tgt - this.pp) * 0.16; if (Math.abs(tgt - this.pp) < 0.001) this.pp = tgt;
+      const e = this.pp, d = this.drumRef.current, pl = this.playerRef.current, fr = this.frameRef.current;
+      if (d) { d.style.transform = `scale(${(1 - 0.18 * e).toFixed(4)})`; d.style.filter = `blur(${(3 * e).toFixed(2)}px) brightness(${(1 - 0.5 * e).toFixed(3)})`; d.style.opacity = (1 - 0.5 * e).toFixed(3); }
+      if (pl) { pl.style.opacity = e.toFixed(3); pl.style.pointerEvents = e > 0.05 ? 'auto' : 'none'; }
+      if (fr) { fr.style.transform = `scale(${(0.82 + 0.18 * e).toFixed(4)})`; fr.style.opacity = e.toFixed(3); }
+    }
+    if (this.fine && !this.reduce && this.rc.length) {
+      const R = 120, MAX = 13;
+      for (const p of this.rc) {
+        const dx = (this.mx ?? -1e4) - p.cx, dy = (this.my ?? -1e4) + window.pageYOffset - p.cy, d = Math.hypot(dx, dy);
+        let gx = 0, gy = 0, gr = 0;
+        if (d < R) { const f = 1 - d / R; gx = dx / (d || 1) * f * MAX; gy = dy / (d || 1) * f * MAX; gr = dx / (d || 1) * f * 4; }
+        p.tx += (gx - p.tx) * 0.18; p.ty += (gy - p.ty) * 0.18; p.tr += (gr - p.tr) * 0.18;
+        p.el.style.transform = `translate(${p.tx.toFixed(2)}px,${p.ty.toFixed(2)}px) rotate(${p.tr.toFixed(2)}deg)`;
+      }
+    }
+  }
+  openPlayer(item) { clearTimeout(this.ct); this.setState({ open: true, item }); }
+  closePlayer() {
+    if (!this.state.open) return;
+    if (this.videoRef.current) { try { this.videoRef.current.pause(); } catch (e) {} }
+    this.setState({ open: false });
+    this.ct = setTimeout(() => { if (!this.state.open) this.setState({ item: null }); }, 560);
+  }
+  setMenu(open) { document.body.style.overflow = open ? 'hidden' : ''; this.setState({ menu: open }); }
+  renderVals() {
+    const { w, menu, items, idx, hover, item, dragging } = this.state;
+    const mob = w <= 768, { N, pw, ph, r, th } = this.dims();
+    const cur = items[idx] || items[0];
+    return {
+      desk: !mob, mob,
+      wordRef: this.wordRef, stageRef: this.stageRef, drumRef: this.drumRef, ringRef: this.ringRef, playerRef: this.playerRef, frameRef: this.frameRef, videoRef: this.videoRef,
+      toggleMenu: () => this.setMenu(!menu), closeMenu: () => this.setMenu(false),
+      bar1: menu ? 'translateY(7px) rotate(45deg)' : 'none', bar2: menu ? 0 : 1, bar3: menu ? 'translateY(-7px) rotate(-45deg)' : 'none',
+      menuOpacity: menu ? 1 : 0, menuPE: menu ? 'auto' : 'none', menuHidden: menu ? 'false' : 'true',
+      pwPx: pw + 'px', phPx: ph + 'px', cursor: dragging ? 'grabbing' : 'grab',
+      dragStart: e => { this.drag = true; this.moved = false; this.startX = e.clientX; this.startAngle = this.angle; this.setState({ dragging: true }); },
+      prev: () => this.step(1), next: () => this.step(-1),
+      panels: items.map((it, i) => {
+        const a = i === idx;
+        return { ...it, tf: `rotateY(${i * th}deg) translateZ(${r}px)`,
+          border: a ? 'rgba(255,196,0,0.55)' : 'rgba(234,236,239,0.16)',
+          shadow: a ? '0 40px 90px rgba(0,0,0,0.6),0 0 0 1px rgba(255,196,0,0.25)' : '0 30px 70px rgba(0,0,0,0.5)',
+          imgF: a ? (hover === i ? 'grayscale(0) brightness(0.6)' : 'grayscale(0) brightness(0.92)') : 'grayscale(0.5) brightness(0.7)',
+          catOp: a && hover === i ? 0 : 1, viewOp: a && hover === i ? 1 : 0,
+          open: () => { if (!mob && this.moved) return; this.openPlayer(it); },
+          enter: () => this.setState({ hover: i }), leave: () => this.setState({ hover: -1 }) };
+      }),
+      cur: { ...cur, tags: cur.tags || [], type: cur.type || cur.title, turnaround: cur.turnaround || '—', footage: cur.footage || '—', cameras: cur.cameras || '—' },
+      idxLabel: String(idx + 1).padStart(2, '0') + ' / ' + String(N).padStart(2, '0'),
+      pItem: item || { video: '', poster: '', title: '' }, hasVideo: !!(item && item.video), noVideo: !!(item && !item.video),
+      closePlayer: () => this.closePlayer(), frameW: mob ? '92vw' : 'min(74vw,1180px)', closeOff: mob ? '16px' : '28px',
+    };
+  }
+}
+</script>
+</body>
+</html>

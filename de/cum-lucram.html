@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../support.js"></script>
+<link rel="alternate" hreflang="en" href="https://youreditor.uk/en/cum-lucram.html"><link rel="alternate" hreflang="de" href="https://youreditor.uk/de/cum-lucram.html"><link rel="alternate" hreflang="x-default" href="https://youreditor.uk/en/cum-lucram.html"></head>
+<body>
+<x-dc>
+<helmet>
+<title>Your Editor — Wie wir arbeiten</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#000;color:#f4f1ea;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:clip}
+a{color:inherit;text-decoration:none}
+a:hover{color:inherit}
+h1,h2,h3{margin:0}
+@property --frameGlow{syntax:'<angle>';inherits:false;initial-value:0deg}
+@keyframes etLines{from{background-position:0 0}to{background-position:220px 0}}
+@keyframes frameGlowTravel{to{--frameGlow:360deg}}
+@keyframes socBounce{0%,100%{transform:scale(1.12) translateY(-4px)}50%{transform:scale(1.12) translateY(-10px)}}
+</style>
+</helmet>
+<div style="position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(circle at 50% 0%, rgba(255,196,0,0.10), transparent 42%),radial-gradient(circle at 50% 120%, rgba(255,196,0,0.05), transparent 45%),linear-gradient(180deg,#0a0908 0%,#000 55%)"></div>
+<div style="position:fixed;inset:0;z-index:0;pointer-events:none;background:repeating-linear-gradient(115deg, rgba(234,236,239,0.04) 0px, rgba(234,236,239,0.04) 1px, transparent 1px, transparent 18px);opacity:0.18;transform:scale(1.1);animation:etLines 16s linear infinite"></div>
+
+<div style="position:relative;z-index:1">
+
+  <nav style="position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(0,0,0,0.55);border-bottom:1px solid rgba(234,236,239,0.12)">
+    <div style="max-width:1180px;margin:0 auto;padding:15px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <a href="index.html" style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:20px;letter-spacing:0.04em;text-transform:uppercase;;color:#f4f1ea">Your <span style="color:#ffc400">Editor</span></a>
+      <sc-if value="{{ desk }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;align-items:center;gap:26px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase">
+          <a href="cum-lucram.html" style="color:#ffc400">Wie wir arbeiten</a>
+          <a href="portofoliu.html" style="color:rgba(234,236,239,0.70);transition:color .2s ease" style-hover="color:#f4f1ea">Portfolio</a>
+          <a href="instrumente.html" style="color:rgba(234,236,239,0.70);transition:color .2s ease" style-hover="color:#f4f1ea">Tools</a>
+          <a href="tarife.html" style="color:rgba(234,236,239,0.70);transition:color .2s ease" style-hover="color:#f4f1ea">Preise</a>
+          <a href="tarife.html#contact" style="color:rgba(234,236,239,0.70);transition:color .2s ease" style-hover="color:#f4f1ea">Kontakt</a><span class="lang-sw" style="display:inline-flex;gap:7px;align-items:center;margin-left:16px;font-size:13px;letter-spacing:.06em;vertical-align:middle"><a href="../en/cum-lucram.html" style="color:rgba(234,236,239,0.6);text-decoration:none">EN</a><span style="opacity:.35">/</span><a href="../de/cum-lucram.html" style="color:#ffc400;font-weight:700;text-decoration:none">DE</a></span>
+        </div>
+      </sc-if>
+      <sc-if value="{{ mob }}" hint-placeholder-val="{{ false }}">
+        <button onClick="{{ toggleMenu }}" aria-label="Meniu" style="width:44px;height:44px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;border:none;background:transparent;cursor:pointer;padding:0;position:relative;z-index:130">
+          <span style="display:block;width:24px;height:2px;background:#f4f1ea;border-radius:2px;transition:transform .3s ease;transform:{{ bar1 }}"></span>
+          <span style="display:block;width:24px;height:2px;background:#f4f1ea;border-radius:2px;transition:opacity .2s ease;opacity:{{ bar2 }}"></span>
+          <span style="display:block;width:24px;height:2px;background:#f4f1ea;border-radius:2px;transition:transform .3s ease;transform:{{ bar3 }}"></span>
+        </button>
+      </sc-if>
+    </div>
+  </nav>
+
+  <div aria-hidden="{{ menuHidden }}" style="position: fixed; inset: 0; z-index: 120; background: rgba(7,7,7,0.985); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity .28s ease; opacity: {{ menuOpacity }}; pointer-events: {{ menuPE }}; left: 125px; top: 77px">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(32px,9vw,50px);line-height:1.22;letter-spacing:0.02em;text-transform:uppercase">
+      <a href="index.html" onClick="{{ closeMenu }}" style="padding:8px 18px;color:#f4f1ea">Startseite</a>
+      <a href="cum-lucram.html" onClick="{{ closeMenu }}" style="padding:8px 18px;color:#ffc400">Wie wir arbeiten</a>
+      <a href="portofoliu.html" onClick="{{ closeMenu }}" style="padding:8px 18px;color:#f4f1ea">Portfolio</a>
+      <a href="instrumente.html" onClick="{{ closeMenu }}" style="padding:8px 18px;color:#f4f1ea">Tools</a>
+      <a href="tarife.html" onClick="{{ closeMenu }}" style="padding:8px 18px;color:#f4f1ea">Preise</a>
+      <a href="tarife.html#contact" onClick="{{ closeMenu }}" style="padding:8px 18px;color:#f4f1ea">Kontakt</a><span class="lang-sw" style="display:inline-flex;gap:7px;align-items:center;margin-left:16px;font-size:13px;letter-spacing:.06em;vertical-align:middle"><a href="../en/cum-lucram.html" style="color:rgba(234,236,239,0.6);text-decoration:none">EN</a><span style="opacity:.35">/</span><a href="../de/cum-lucram.html" style="color:#ffc400;font-weight:700;text-decoration:none">DE</a></span>
+    </div>
+    <div style="margin-top:30px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+      <a href="https://wa.me/37379840751" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(234,236,239,0.70);border:1px solid rgba(234,236,239,0.16);border-radius:9999px;padding:12px 20px">WhatsApp</a>
+      <a href="https://t.me/alexqabl" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(234,236,239,0.70);border:1px solid rgba(234,236,239,0.16);border-radius:9999px;padding:12px 20px">Telegram</a>
+    </div>
+  </div>
+
+  <header style="padding:clamp(54px,8vw,96px) 0 clamp(30px,4vw,52px)" data-screen-label="Hero">
+    <div style="max-width:1180px;margin:0 auto;padding:0 28px">
+      <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:rgba(234,236,239,0.50);display:flex;align-items:center;gap:12px"><span style="color:#ffc400">✦</span> Du filmst, wir schneiden</div>
+      <h1 style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(56px,12vw,164px);font-weight:400;line-height:1.0;letter-spacing:0.01em;text-transform:uppercase;margin-top:24px">Wie wir arbeiten</h1>
+      <p style="margin:22px 0 0;color:rgba(234,236,239,0.70);font-size:clamp(17px,1.6vw,21px);line-height:1.5">Normalerweise warten Paare ein halbes Jahr auf ihren Hochzeitsfilm. Wir haben uns entschieden, <span style="color:#ffc400">mit diesem Klischee zu brechen</span>.</p>
+
+      <sc-if value="{{ desk }}" hint-placeholder-val="{{ true }}">
+        <div style="position:relative;margin-top:clamp(40px,5vw,64px)">
+          <div style="position:absolute;left:12.5%;right:12.5%;top:24px;height:2px;z-index:0">
+            <div style="position:absolute;left:0;right:0;top:0;height:2px;background:rgba(234,236,239,0.22);border-radius:2px"></div>
+            <div style="position:absolute;top:0;left:0;width:calc(66.667% - 26px);height:2px;background:#ffc400;border-radius:2px;box-shadow:0 0 8px rgba(255,196,0,0.22);transform-origin:left center;transition:transform 1.4s cubic-bezier(0.22,1,0.36,1);transform:{{ seg1 }}"></div>
+            <div style="position:absolute;top:0;left:calc(66.667% + 26px);width:calc(33.333% - 26px);height:2px;background:#ffc400;border-radius:2px;box-shadow:0 0 8px rgba(255,196,0,0.22);transform-origin:left center;transition:transform 0.8s cubic-bezier(0.22,1,0.36,1);transform:{{ seg2 }}"></div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px">
+            <div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 10px">
+              <div style="position:relative;z-index:1;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;font-weight:700;letter-spacing:0.04em;color:#ffc400;background:#0c0b0a;border:1px solid rgba(234,236,239,0.16);transition:transform .3s ease,border-color .4s ease" style-hover="transform:translateY(-3px);border-color:rgba(255,196,0,0.55)">01</div>
+              <div style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(17px,1.5vw,23px);text-transform:uppercase;line-height:1.25;letter-spacing:0.01em;margin-top:20px">Wir melden uns<br>und sprechen</div>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 10px">
+              <div style="position:relative;z-index:1;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;font-weight:700;letter-spacing:0.04em;color:#ffc400;background:#0c0b0a;border:1px solid rgba(234,236,239,0.16);transition:transform .3s ease,border-color .4s ease" style-hover="transform:translateY(-3px);border-color:rgba(255,196,0,0.55)">02</div>
+              <div style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(17px,1.5vw,23px);text-transform:uppercase;line-height:1.25;letter-spacing:0.01em;margin-top:20px">Du sendest<br>das Material</div>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 10px">
+              <div style="position:relative;z-index:1;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;font-weight:700;letter-spacing:0.04em;background:#0c0b0a;transition:transform .3s ease,border-color .4s ease;border:1px solid {{ nodeBorder }}" style-hover="transform:translateY(-3px)">
+                <span style="position:absolute;inset:-1px;border-radius:50%;background:#ffc400;box-shadow:0 0 22px rgba(255,196,0,0.22);transform-origin:center;transition:transform .45s cubic-bezier(0.22,1,0.36,1),opacity .45s ease;z-index:1;opacity:{{ litO }};transform:{{ fillT }}"></span>
+                <span style="position:relative;z-index:2;transition:color .4s ease;color:{{ numColor }}">03</span>
+              </div>
+              <div style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(17px,1.5vw,23px);text-transform:uppercase;line-height:1.25;letter-spacing:0.01em;margin-top:20px;color:#ffc400;text-shadow:0 0 22px rgba(255,196,0,0.22)">Wir bereiten<br>das Projekt vor</div>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 10px">
+              <div style="position:relative;z-index:1;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;font-weight:700;letter-spacing:0.04em;color:#ffc400;background:#0c0b0a;border:1px solid rgba(234,236,239,0.16);transition:transform .3s ease,border-color .4s ease" style-hover="transform:translateY(-3px);border-color:rgba(255,196,0,0.55)">04</div>
+              <div style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(17px,1.5vw,23px);text-transform:uppercase;line-height:1.25;letter-spacing:0.01em;margin-top:20px">Du erhältst<br>den fertigen Film</div>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ mob }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top:clamp(40px,5vw,64px);display:flex;flex-direction:column;padding-left:2px">
+          <div style="position:relative;display:flex;gap:20px;align-items:flex-start;padding:0 0 30px">
+            <div style="position:absolute;left:25px;top:54px;bottom:-4px;width:2px;background:rgba(234,236,239,0.09)"></div>
+            <div style="flex:0 0 auto;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;font-weight:700;color:#ffc400;background:#0c0b0a;border:1px solid rgba(234,236,239,0.16)">01</div>
+            <div style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(17px,1.5vw,23px);text-transform:uppercase;line-height:1.25;letter-spacing:0.01em;margin-top:6px">Wir melden uns<br>und sprechen</div>
+          </div>
+          <div style="position:relative;display:flex;gap:20px;align-items:flex-start;padding:0 0 30px">
+            <div style="position:absolute;left:25px;top:54px;bottom:-4px;width:2px;background:rgba(234,236,239,0.09)"></div>
+            <div style="flex:0 0 auto;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;font-weight:700;color:#ffc400;background:#0c0b0a;border:1px solid rgba(234,236,239,0.16)">02</div>
+            <div style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(17px,1.5vw,23px);text-transform:uppercase;line-height:1.25;letter-spacing:0.01em;margin-top:6px">Du sendest<br>das Material</div>
+          </div>
+          <div style="position:relative;display:flex;gap:20px;align-items:flex-start;padding:0 0 30px">
+            <div style="position:absolute;left:25px;top:54px;bottom:-4px;width:2px;background:linear-gradient(180deg,#ffc400,rgba(234,236,239,0.09))"></div>
+            <div style="position:relative;flex:0 0 auto;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;font-weight:700;color:#000;background:#ffc400;border:1px solid #ffc400;box-shadow:0 0 22px rgba(255,196,0,0.22)">03</div>
+            <div style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(17px,1.5vw,23px);text-transform:uppercase;line-height:1.25;letter-spacing:0.01em;margin-top:6px;color:#ffc400;text-shadow:0 0 22px rgba(255,196,0,0.22)">Wir bereiten<br>das Projekt vor</div>
+          </div>
+          <div style="position:relative;display:flex;gap:20px;align-items:flex-start;padding:0 0 30px">
+            <div style="flex:0 0 auto;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;font-weight:700;color:#ffc400;background:#0c0b0a;border:1px solid rgba(234,236,239,0.16)">04</div>
+            <div style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(17px,1.5vw,23px);text-transform:uppercase;line-height:1.25;letter-spacing:0.01em;margin-top:6px">Du erhältst<br>den fertigen Film</div>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+  </header>
+
+  <section style="padding:clamp(40px,5vw,64px) 0 clamp(36px,4.5vw,56px)" data-screen-label="Zusammenarbeit">
+    <div style="max-width:1180px;margin:0 auto;padding:0 28px">
+      <h2 style="max-width:840px;font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(30px,4.4vw,62px);font-weight:400;line-height:1.1;letter-spacing:0.004em;text-transform:uppercase">Zusammenarbeit mit uns heißt</h2>
+      <div style="display:grid;gap:16px;margin-top:clamp(30px,4vw,48px);grid-template-columns:{{ bCols }};grid-template-rows:{{ bRows }}">
+        <div style="position:relative;display:flex;flex-direction:column;justify-content:flex-start;border:1px solid rgba(234,236,239,0.09);border-radius:18px;padding:clamp(30px,3.4vw,46px);overflow:hidden;background:radial-gradient(120% 100% at 0% 0%, rgba(255,196,0,0.10), transparent 52%),linear-gradient(180deg, rgba(255,255,255,0.022), rgba(255,255,255,0.01));transition:border-color .3s ease,transform .3s ease;grid-area:{{ a1 }};min-height:{{ b1Min }}" style-hover="border-color:rgba(255,196,0,0.30);transform:translateY(-3px)">
+          <h3 style="font-family:'Anton','Arial Black',Impact,sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:0.01em;font-size:clamp(46px,5.6vw,82px);line-height:1.12;margin-top:-0.2em;color:#ffc400;text-shadow:0 0 34px rgba(255,196,0,0.22)">UNTER DEINER MARKE</h3>
+          <p style="font-size:clamp(16px,1.25vw,19px);line-height:1.55;max-width:32ch;color:#f4f1ea;opacity:0.84;margin:16px 0 0">Der Kunde weiß nicht, dass der Schnitt ausgelagert ist — alles wirkt wie deine eigene Arbeit.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;border:1px solid rgba(234,236,239,0.09);border-radius:18px;padding:28px 26px;background:rgba(255,255,255,0.018);transition:border-color .3s ease,transform .3s ease;grid-area:{{ a2 }}" style-hover="border-color:rgba(255,196,0,0.30);transform:translateY(-3px)">
+          <h3 style="font-family:'Anton','Arial Black',Impact,sans-serif;font-weight:400;text-transform:uppercase;line-height:1.04;letter-spacing:0.01em;font-size:23px">Der Stil bleibt deiner</h3>
+          <p style="color:rgba(234,236,239,0.70);font-size:15px;line-height:1.55;margin:13px 0 0;max-width:46ch">Wir schneiden nach deinem Portfolio. Der Kunde sieht weiterhin deine Handschrift.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;justify-content:center;border:1px solid rgba(255,196,0,0.5);border-radius:18px;padding:28px 26px;background:linear-gradient(180deg,rgba(255,196,0,0.09),rgba(255,255,255,0.012));box-shadow:0 0 0 1px rgba(255,196,0,0.10),0 22px 56px rgba(0,0,0,0.42),0 0 50px rgba(255,196,0,0.05);transition:transform .3s ease;grid-area:{{ a3 }}" style-hover="transform:translateY(-3px)">
+          <h3 style="display:flex;flex-direction:column;gap:10px;font-weight:400;margin:0">
+            <span style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(44px,5vw,62px);line-height:0.8;color:#ffc400;text-shadow:0 0 26px rgba(255,196,0,0.22);text-transform:uppercase">4 Tage</span>
+            <span style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(18px,1.5vw,23px);line-height:1.04;text-transform:uppercase;color:#f4f1ea;letter-spacing:0.01em">bis zur Lieferung</span>
+          </h3>
+        </div>
+        <div style="display:flex;flex-direction:column;justify-content:center;border:1px solid rgba(234,236,239,0.09);border-radius:18px;padding:28px 26px;background:rgba(255,255,255,0.018);transition:border-color .3s ease,transform .3s ease;grid-area:{{ a4 }}" style-hover="border-color:rgba(255,196,0,0.30);transform:translateY(-3px)">
+          <h3 style="font-family:'Anton','Arial Black',Impact,sans-serif;font-weight:400;text-transform:uppercase;line-height:1.04;letter-spacing:0.01em;font-size:clamp(17px,1.6vw,23px);">Nimm mehr Drehs an</h3>
+          <p style="color:rgba(234,236,239,0.70);font-size:15px;line-height:1.55;margin:13px 0 0;max-width:46ch">Gib die Postproduktion ab und buche mehr Hochzeiten.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;border:1px solid rgba(234,236,239,0.09);border-radius:18px;padding:28px 26px;background:linear-gradient(90deg, rgba(255,255,255,0.022), rgba(255,196,0,0.03));transition:border-color .3s ease,transform .3s ease;grid-area:{{ a5 }}" style-hover="border-color:rgba(255,196,0,0.30);transform:translateY(-3px)">
+          <h3 style="font-family:'Anton','Arial Black',Impact,sans-serif;font-weight:400;text-transform:uppercase;line-height:1.04;letter-spacing:0.01em;font-size:clamp(21px,1.7vw,28px)">Komplettes <span style="color:#ffc400">Projekt</span>, nicht nur ein Export</h3>
+          <p style="color:rgba(234,236,239,0.70);font-size:15px;line-height:1.55;margin:13px 0 0">Film, DaVinci-Projekt, LUTs, Ton und Farbe — alles geordnet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(56px,7.5vw,96px) 0" data-screen-label="Spezialisten">
+    <div style="max-width:1180px;margin:0 auto;padding:0 28px">
+      <div style="max-width:840px">
+        <h2 style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(30px,4.4vw,62px);font-weight:400;line-height:1.1;letter-spacing:0.004em;text-transform:uppercase">Dein Team aus <span style="color:#ffc400">fünf Spezialisten</span></h2>
+        <p style="color:rgba(234,236,239,0.70);font-size:clamp(16px,1.5vw,20px);line-height:1.5;max-width:560px;margin:18px 0 0">Jede Phase — ein eigener Spezialist. Der Film Editor sorgt dafür, dass alles in deinem Stil bleibt.</p>
+      </div>
+      <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <div style="margin-top:clamp(30px,3.5vw,46px);border:1px solid rgba(234,236,239,0.16);border-radius:18px;background:#0b0b0a;overflow:hidden;box-shadow:0 34px 90px rgba(0,0,0,0.5)">
+        <div style="display:grid;grid-template-columns:72px minmax(0,1fr)">
+          <div style="border-right:1px solid rgba(234,236,239,0.09);border-bottom:1px solid rgba(234,236,239,0.09);height:34px"></div>
+          <div style="position:relative;height:34px;border-bottom:1px solid rgba(234,236,239,0.09);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.1em;color:rgba(234,236,239,0.50);background:repeating-linear-gradient(90deg,rgba(234,236,239,0.22) 0 1px,transparent 1px 2.5%) bottom/100% 7px no-repeat"><span style="position:absolute;left:0%;top:8px;padding-left:6px">00:00</span><span style="position:absolute;left:25%;top:8px;padding-left:6px">01:00</span><span style="position:absolute;left:50%;top:8px;padding-left:6px">02:00</span><span style="position:absolute;left:75%;top:8px;padding-left:6px">03:00</span></div>
+          <div style="border-right:1px solid rgba(234,236,239,0.09);display:flex;flex-direction:column;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;font-weight:700;letter-spacing:0.14em;color:rgba(234,236,239,0.50)">
+            <div style="height:78px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid rgba(234,236,239,0.06)">V1</div>
+            <div style="height:78px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid rgba(234,236,239,0.06);color:#ffc400">V2</div>
+            <div style="height:78px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid rgba(234,236,239,0.06)">V3</div>
+            <div style="height:78px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid rgba(234,236,239,0.06)">V4</div>
+            <div style="height:78px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid rgba(234,236,239,0.06)">V5</div>
+          </div>
+          <div style="position:relative;background:repeating-linear-gradient(90deg,rgba(234,236,239,0.025) 0 1px,transparent 1px 25%)">
+            <div style="position:relative;height:78px;border-bottom:1px solid rgba(234,236,239,0.06)">
+              <div style="position:absolute;top:11px;bottom:11px;left:0%;width:24%;border-radius:10px;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:5px;padding:6px 16px 0;transition:transform .3s ease;background:#141412;border:1px solid rgba(234,236,239,0.16);color:#f4f1ea" style-hover="transform:translateY(-2px)">
+                <div style="position:absolute;left:0;right:0;top:0;height:5px;background:repeating-linear-gradient(90deg,rgba(234,236,239,0.12) 0 6px,transparent 6px 12px)"></div>
+                <div style="display:flex;gap:10px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;;color:rgba(234,236,239,0.50)"><span>01</span><span style="color:#ffc400">SYNC</span></div>
+                <div style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(16px,1.6vw,22px);text-transform:uppercase;letter-spacing:0.01em;line-height:1;;overflow:hidden;text-overflow:ellipsis">Media Manager</div>
+              </div>
+            </div>
+            <div style="position:relative;height:78px;border-bottom:1px solid rgba(234,236,239,0.06)">
+              <div style="position:absolute;top:11px;bottom:11px;left:16%;width:84%;border-radius:10px;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:5px;padding:6px 16px 0;transition:transform .3s ease;background:#ffc400;border:1px solid #ffc400;box-shadow:0 0 34px rgba(255,196,0,0.22);color:#000" style-hover="transform:translateY(-2px)">
+                <div style="position:absolute;left:0;right:0;top:0;height:5px;background:repeating-linear-gradient(90deg,rgba(0,0,0,0.18) 0 6px,transparent 6px 12px)"></div>
+                <div style="display:flex;gap:10px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;;color:rgba(0,0,0,0.62)"><span>02</span><span style="color:#000">Hält den Stil</span></div>
+                <div style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(16px,1.6vw,22px);text-transform:uppercase;letter-spacing:0.01em;line-height:1;;overflow:hidden;text-overflow:ellipsis">Film Editor</div>
+              </div>
+            </div>
+            <div style="position:relative;height:78px;border-bottom:1px solid rgba(234,236,239,0.06)">
+              <div style="position:absolute;top:11px;bottom:11px;left:34%;width:28%;border-radius:10px;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:5px;padding:6px 16px 0;transition:transform .3s ease;background:#141412;border:1px solid rgba(234,236,239,0.16);color:#f4f1ea" style-hover="transform:translateY(-2px)">
+                <div style="position:absolute;left:0;right:0;top:0;height:5px;background:repeating-linear-gradient(90deg,rgba(234,236,239,0.12) 0 6px,transparent 6px 12px)"></div>
+                <div style="display:flex;gap:10px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;;color:rgba(234,236,239,0.50)"><span>03</span></div>
+                <div style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(16px,1.6vw,22px);text-transform:uppercase;letter-spacing:0.01em;line-height:1;;overflow:hidden;text-overflow:ellipsis">Highlights Editor</div>
+              </div>
+            </div>
+            <div style="position:relative;height:78px;border-bottom:1px solid rgba(234,236,239,0.06)">
+              <div style="position:absolute;top:11px;bottom:11px;left:56%;width:20%;border-radius:10px;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:5px;padding:6px 16px 0;transition:transform .3s ease;background:#141412;border:1px solid rgba(234,236,239,0.16);color:#f4f1ea" style-hover="transform:translateY(-2px)">
+                <div style="position:absolute;left:0;right:0;top:0;height:5px;background:repeating-linear-gradient(90deg,rgba(234,236,239,0.12) 0 6px,transparent 6px 12px)"></div>
+                <div style="display:flex;gap:10px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;;color:rgba(234,236,239,0.50)"><span>04</span></div>
+                <div style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(16px,1.6vw,22px);text-transform:uppercase;letter-spacing:0.01em;line-height:1;;overflow:hidden;text-overflow:ellipsis">Colorist</div>
+              </div>
+            </div>
+            <div style="position:relative;height:78px;border-bottom:1px solid rgba(234,236,239,0.06)">
+              <div style="position:absolute;top:11px;bottom:11px;left:72%;width:28%;border-radius:10px;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:5px;padding:6px 16px 0;transition:transform .3s ease;background:#141412;border:1px solid rgba(234,236,239,0.16);color:#f4f1ea" style-hover="transform:translateY(-2px)">
+                <div style="position:absolute;left:0;right:0;top:0;height:5px;background:repeating-linear-gradient(90deg,rgba(234,236,239,0.12) 0 6px,transparent 6px 12px)"></div>
+                <div style="display:flex;gap:10px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;;color:rgba(234,236,239,0.50)"><span>05</span><span style="color:#ffc400">Your Editor Review</span></div>
+                <div style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(16px,1.6vw,22px);text-transform:uppercase;letter-spacing:0.01em;line-height:1;;overflow:hidden;text-overflow:ellipsis">Delivery Manager</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </sc-if>
+      <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:clamp(30px,3.5vw,46px);border-top:1px solid rgba(234,236,239,0.16)">
+        <div style="display:grid;grid-template-columns:56px 1fr auto;gap:20px;align-items:center;padding:22px 4px;border-bottom:1px solid rgba(234,236,239,0.16)"><div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;color:rgba(234,236,239,0.70)">01</div><div style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(20px,2.1vw,30px);text-transform:uppercase;letter-spacing:0.01em;color:#f4f1ea">Media Manager</div><div><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.06em;border-radius:6px;padding:6px 11px;;color:#ffc400;border:1px solid rgba(255,196,0,0.4)">SYNC</span></div></div>
+        <div style="display:grid;grid-template-columns:56px 1fr auto;gap:20px;align-items:center;padding:22px 4px;border-bottom:1px solid rgba(234,236,239,0.16)"><div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;color:rgba(234,236,239,0.70)">02</div><div style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(20px,2.1vw,30px);text-transform:uppercase;letter-spacing:0.01em;color:#ffc400">Film Editor</div><div><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.06em;border-radius:6px;padding:6px 11px;;background:#ffc400;color:#000;border:1px solid #ffc400">Hält den Stil</span></div></div>
+        <div style="display:grid;grid-template-columns:56px 1fr auto;gap:20px;align-items:center;padding:22px 4px;border-bottom:1px solid rgba(234,236,239,0.16)"><div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;color:rgba(234,236,239,0.70)">03</div><div style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(20px,2.1vw,30px);text-transform:uppercase;letter-spacing:0.01em;color:#f4f1ea">Highlights Editor</div><div></div></div>
+        <div style="display:grid;grid-template-columns:56px 1fr auto;gap:20px;align-items:center;padding:22px 4px;border-bottom:1px solid rgba(234,236,239,0.16)"><div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;color:rgba(234,236,239,0.70)">04</div><div style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(20px,2.1vw,30px);text-transform:uppercase;letter-spacing:0.01em;color:#f4f1ea">Colorist</div><div></div></div>
+        <div style="display:grid;grid-template-columns:56px 1fr auto;gap:20px;align-items:center;padding:22px 4px;border-bottom:1px solid rgba(234,236,239,0.16)"><div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;color:rgba(234,236,239,0.70)">05</div><div style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(20px,2.1vw,30px);text-transform:uppercase;letter-spacing:0.01em;color:#f4f1ea">Delivery Manager</div><div><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.06em;border-radius:6px;padding:6px 11px;;color:#ffc400;border:1px solid rgba(255,196,0,0.4)">Your Editor Review</span></div></div></div>
+      </sc-if>
+    </div>
+  </section>
+
+  <section style="padding:0 0 clamp(56px,7.5vw,96px)" data-screen-label="Tools">
+    <div style="max-width:1180px;margin:0 auto;padding:0 28px">
+      <div style="max-width:840px">
+        <h2 style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(30px,4.4vw,62px);font-weight:400;line-height:1.1;letter-spacing:0.004em;text-transform:uppercase">Unsere <span style="color:#ffc400">Software</span></h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px;margin-top:clamp(28px,3vw,40px)">
+        <div style="border:1px solid rgba(234,236,239,0.09);border-radius:16px;padding:26px 24px;background:rgba(255,255,255,0.015)">
+          <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#ffc400">★ Sync</div>
+          <h3 style="font-family:'Anton','Arial Black',Impact,sans-serif;font-weight:400;font-size:clamp(24px,2.4vw,34px);text-transform:uppercase;margin:12px 0 0;color:#ffc400">SYNC</h3>
+          <p style="color:rgba(234,236,239,0.70);font-size:14.5px;line-height:1.5;margin:12px 0 0">Synchronisiert Kameras und Ton automatisch. DaVinci Resolve und Premiere.</p>
+        </div>
+        <div style="border:1px solid rgba(234,236,239,0.09);border-radius:16px;padding:26px 24px;background:rgba(255,255,255,0.015)">
+          <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#ffc400">★ Korrekturen</div>
+          <h3 style="font-family:'Anton','Arial Black',Impact,sans-serif;font-weight:400;font-size:clamp(24px,2.4vw,34px);text-transform:uppercase;margin:12px 0 0;color:#ffc400">Your Editor Review</h3>
+          <p style="color:rgba(234,236,239,0.70);font-size:14.5px;line-height:1.5;margin:12px 0 0">Korrekturen per Timecode: Text, Sprache oder Zeichnung im Bild. Kein WhatsApp.</p>
+        </div>
+      </div>
+      <div style="margin-top:24px;display:flex">
+        <a href="instrumente.html" style="display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,196,0,0.5);border-radius:9999px;padding:14px 24px;color:#f4f1ea;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;transition:border-color .2s ease,color .2s ease" style-hover="border-color:#ffc400;color:#ffc400">Mehr erfahren →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="padding:0 0 clamp(56px,7.5vw,96px)" data-screen-label="Kontakt">
+    <div style="max-width:1180px;margin:0 auto;padding:0 28px">
+      <div style="position:relative;z-index:1;border-radius:44px;display:grid;padding:clamp(28px,5vw,56px) clamp(20px,5vw,64px);border:1.5px solid rgba(255,196,0,0.5);background:rgba(0,0,0,0.22)">
+        <span aria-hidden="true" style="position:absolute;inset:0;border-radius:44px;padding:1.5px;pointer-events:none;z-index:0;background:conic-gradient(from var(--frameGlow), transparent 0 66%, rgba(255,210,90,0.95) 80%, rgba(255,196,0,0.22) 89%, transparent 96%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:frameGlowTravel 6.5s linear infinite"></span>
+        <h2 style="position:relative;max-width:868px;font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(28px,6vw,84px);font-weight:400;line-height:1.1;text-transform:uppercase;letter-spacing:0.004em">Hast du ein Projekt? <span style="color:#ffc400">lass uns reden</span></h2>
+        <div style="position:relative;display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:38px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase">
+          <a href="https://wa.me/37379840751" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:11px;padding:14px 22px;border-radius:9999px;color:#000;background:#ffc400;transition:box-shadow .28s ease" style-hover="color:#000;animation:socBounce .7s ease-in-out infinite;box-shadow:0 16px 40px rgba(255,196,0,0.5)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.515 5.26l-.999 3.648 3.973-1.305zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path></svg>
+            WhatsApp
+          </a>
+          <a href="https://t.me/alexqabl" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:11px;padding:14px 22px;border-radius:9999px;border:1px solid rgba(234,236,239,0.16);background:rgba(0,0,0,0.25);color:#f4f1ea;transition:border-color .28s ease,color .28s ease,background .28s ease" style-hover="animation:socBounce .7s ease-in-out infinite;border-color:rgba(255,196,0,0.85);color:#ffc400;background:rgba(255,196,0,0.06)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.231-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.230.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.830-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"></path></svg>
+            Telegram
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61591004736764&amp;locale=ru_RU" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:11px;padding:14px 22px;border-radius:9999px;border:1px solid rgba(234,236,239,0.16);background:rgba(0,0,0,0.25);color:#f4f1ea;transition:border-color .28s ease,color .28s ease,background .28s ease" style-hover="animation:socBounce .7s ease-in-out infinite;border-color:rgba(255,196,0,0.85);color:#ffc400;background:rgba(255,196,0,0.06)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.830c-1.491 0-1.956.925-1.956 1.874v2.250h3.328l-.532 3.470h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+            Facebook
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="border-top:1px solid rgba(234,236,239,0.12)">
+    <div style="max-width:1180px;margin:0 auto;padding:56px 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px;align-items:start">
+      <div>
+        <div style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:22px;letter-spacing:0.04em;text-transform:uppercase">Your <span style="color:#ffc400">Editor</span></div>
+        <p style="margin:14px 0 0;color:rgba(234,236,239,0.50);font-size:14px;line-height:1.6;max-width:260px">Ausgelagerte Postproduktion für Hochzeitsvideografen.</p>
+      </div>
+      <div>
+        <div style="color:rgba(234,236,239,0.50);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:14px">Kontakt</div>
+        <div style="display:flex;flex-direction:column;gap:13px;margin-top:2px;font-size:15px;line-height:1.3">
+          <a href="https://wa.me/37379840751" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;color:rgba(234,236,239,0.70);transition:color .2s ease" style-hover="color:#ffc400">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M21 16.5v2.6a1.7 1.7 0 0 1-1.9 1.7 17 17 0 0 1-7.4-2.6 16.7 16.7 0 0 1-5.1-5.1A17 17 0 0 1 4 5.7 1.7 1.7 0 0 1 5.7 4h2.6a1.7 1.7 0 0 1 1.7 1.5c.1.8.3 1.5.6 2.2a1.7 1.7 0 0 1-.4 1.8l-1 1a13.5 13.5 0 0 0 5.1 5.1l1-1a1.7 1.7 0 0 1 1.8-.4c.7.3 1.4.5 2.2.6a1.7 1.7 0 0 1 1.4 1.7z"></path></svg>
+            <span>WhatsApp</span>
+          </a>
+          <a href="https://t.me/alexqabl" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;color:rgba(234,236,239,0.70);transition:color .2s ease" style-hover="color:#ffc400">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M21 4 10.5 14.5"></path><path d="M21 4 14.5 21l-4-8.5L2 8.5 21 4z"></path></svg>
+            <span>Telegram</span>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61591004736764&amp;locale=ru_RU" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;color:rgba(234,236,239,0.70);transition:color .2s ease" style-hover="color:#ffc400">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M17 3h-3a4 4 0 0 0-4 4v3H7v4h3v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h2z"></path></svg>
+            <span>Facebook</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1180px;margin:0 auto;padding:0 28px 40px;color:rgba(234,236,239,0.26);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.04em">© 2026 Your Editor</div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { w: typeof window !== 'undefined' ? window.innerWidth : 1280, menu: false, go1: false, lit: false, go2: false };
+  componentDidMount() {
+    this.onResize = () => this.setState({ w: window.innerWidth });
+    window.addEventListener('resize', this.onResize);
+    this.t = [
+      setTimeout(() => this.setState({ go1: true }), 400),
+      setTimeout(() => this.setState({ lit: true }), 1600),
+      setTimeout(() => this.setState({ go2: true }), 1900),
+    ];
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+    this.t.forEach(clearTimeout);
+    document.body.style.overflow = '';
+  }
+  setMenu(open) {
+    document.body.style.overflow = open ? 'hidden' : '';
+    this.setState({ menu: open });
+  }
+  renderVals() {
+    const { w, menu, go1, lit, go2 } = this.state;
+    const mob = w <= 760;
+    const lg = w > 860, md = w > 560;
+    return {
+      desk: !mob, mob, wide: w > 960, narrow: w <= 960,
+      toggleMenu: () => this.setMenu(!menu),
+      closeMenu: () => this.setMenu(false),
+      bar1: menu ? 'translateY(7px) rotate(45deg)' : 'none',
+      bar2: menu ? 0 : 1,
+      bar3: menu ? 'translateY(-7px) rotate(-45deg)' : 'none',
+      menuOpacity: menu ? 1 : 0,
+      menuPE: menu ? 'auto' : 'none',
+      menuHidden: menu ? 'false' : 'true',
+      seg1: go1 ? 'scaleX(1)' : 'scaleX(0)',
+      seg2: go2 ? 'scaleX(1)' : 'scaleX(0)',
+      nodeBorder: lit ? '#ffc400' : 'rgba(234,236,239,0.16)',
+      litO: lit ? 1 : 0,
+      fillT: lit ? 'scale(1)' : 'scale(0)',
+      badgeT: lit ? 'translateX(-50%) translateY(0)' : 'translateX(-50%) translateY(6px)',
+      numColor: lit ? '#000' : '#ffc400',
+      bCols: lg ? 'repeat(4,1fr)' : md ? 'repeat(2,1fr)' : '1fr',
+      bRows: lg ? '1fr 1fr auto' : 'auto',
+      b1Min: lg ? '320px' : '240px',
+      a1: lg ? '1 / 1 / 3 / 3' : md ? 'auto / 1 / auto / 3' : 'auto',
+      a2: lg ? '1 / 3 / 2 / 5' : 'auto',
+      a3: lg ? '2 / 3 / 3 / 4' : 'auto',
+      a4: lg ? '2 / 4 / 3 / 5' : md ? 'auto / 1 / auto / 3' : 'auto',
+      a5: lg ? '3 / 1 / 4 / 5' : md ? 'auto / 1 / auto / 3' : 'auto',
+    };
+  }
+}
+</script>
+</body>
+</html>

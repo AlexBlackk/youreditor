@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../support.js"></script>
+<link rel="alternate" hreflang="en" href="https://youreditor.uk/en/tarife.html"><link rel="alternate" hreflang="de" href="https://youreditor.uk/de/tarife.html"><link rel="alternate" hreflang="x-default" href="https://youreditor.uk/en/tarife.html"></head>
+<body>
+<x-dc>
+<helmet>
+<title>Your Editor — Pricing</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#000;color:#f4f1ea;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:clip}
+a{color:inherit;text-decoration:none}
+a:hover{color:inherit}
+h1,h2,h3{margin:0}
+@keyframes etLines{from{background-position:0 0}to{background-position:220px 0}}
+@keyframes shimmerText{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes glowTravel{0%{left:2%;transform:translateY(-50%) scale(1);opacity:.8}50%{left:48%;transform:translateY(-50%) scale(1.1);opacity:1}100%{left:2%;transform:translateY(-50%) scale(1);opacity:.8}}
+@keyframes socBounce{0%,100%{transform:scale(1.12) translateY(-4px)}50%{transform:scale(1.12) translateY(-10px)}}
+@media(max-width:768px),(prefers-reduced-motion:reduce){[data-anim]{animation:none!important}}
+</style>
+</helmet>
+<div style="position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(circle at 50% 0%, rgba(255,196,0,0.10), transparent 42%),radial-gradient(circle at 50% 120%, rgba(255,196,0,0.06), transparent 45%),linear-gradient(180deg,#0a0908 0%,#000 55%)"></div>
+<div data-anim="1" style="position:fixed;inset:0;z-index:0;pointer-events:none;background:repeating-linear-gradient(115deg, rgba(234,236,239,0.04) 0px, rgba(234,236,239,0.04) 1px, transparent 1px, transparent 18px);opacity:0.18;transform:scale(1.1);animation:etLines 16s linear infinite"></div>
+
+<div style="position:relative;z-index:1">
+
+  <nav style="position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(0,0,0,0.55);border-bottom:1px solid rgba(234,236,239,0.12)">
+    <div style="max-width:1180px;margin:0 auto;padding:15px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <a href="index.html" style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:20px;letter-spacing:0.04em;text-transform:uppercase;;color:#f4f1ea">Your <span style="color:#ffc400">Editor</span></a>
+      <sc-if value="{{ desk }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;align-items:center;gap:26px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase">
+          <a href="cum-lucram.html" style="color:rgba(234,236,239,0.70);transition:color .2s ease" style-hover="color:#f4f1ea">How we work</a>
+          <a href="portofoliu.html" style="color:rgba(234,236,239,0.70);transition:color .2s ease" style-hover="color:#f4f1ea">Portfolio</a>
+          <a href="instrumente.html" style="color:rgba(234,236,239,0.70);transition:color .2s ease" style-hover="color:#f4f1ea">Tools</a>
+          <a href="#" style="color:#ffc400">Pricing</a>
+          <a href="#contact" style="color:rgba(234,236,239,0.70);transition:color .2s ease" style-hover="color:#f4f1ea">Contact</a><span class="lang-sw" style="display:inline-flex;gap:7px;align-items:center;margin-left:16px;font-size:13px;letter-spacing:.06em;vertical-align:middle"><a href="../en/tarife.html" style="color:#ffc400;font-weight:700;text-decoration:none">EN</a><span style="opacity:.35">/</span><a href="../de/tarife.html" style="color:rgba(234,236,239,0.6);text-decoration:none">DE</a></span>
+        </div>
+      </sc-if>
+      <sc-if value="{{ mob }}" hint-placeholder-val="{{ false }}">
+        <button onClick="{{ toggleMenu }}" aria-label="Meniu" style="width:44px;height:44px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;border:none;background:transparent;cursor:pointer;padding:0;position:relative;z-index:130">
+          <span style="display:block;width:24px;height:2px;background:#f4f1ea;border-radius:2px;transition:transform .3s ease;transform:{{ bar1 }}"></span>
+          <span style="display:block;width:24px;height:2px;background:#f4f1ea;border-radius:2px;transition:opacity .2s ease;opacity:{{ bar2 }}"></span>
+          <span style="display:block;width:24px;height:2px;background:#f4f1ea;border-radius:2px;transition:transform .3s ease;transform:{{ bar3 }}"></span>
+        </button>
+      </sc-if>
+    </div>
+  </nav>
+
+  <div aria-hidden="{{ menuHidden }}" style="position:fixed;inset:0;z-index:120;background:rgba(7,7,7,0.985);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .28s ease;opacity:{{ menuOpacity }};pointer-events:{{ menuPE }}">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(32px,9vw,50px);line-height:1.22;letter-spacing:0.02em;text-transform:uppercase">
+      <a href="index.html" onClick="{{ closeMenu }}" style="padding:8px 18px;color:#f4f1ea">Home</a>
+      <a href="cum-lucram.html" onClick="{{ closeMenu }}" style="padding:8px 18px;color:#f4f1ea">How we work</a>
+      <a href="portofoliu.html" onClick="{{ closeMenu }}" style="padding:8px 18px;color:#f4f1ea">Portfolio</a>
+      <a href="instrumente.html" onClick="{{ closeMenu }}" style="padding:8px 18px;color:#f4f1ea">Tools</a>
+      <a href="#" onClick="{{ closeMenu }}" style="padding:8px 18px;color:#ffc400">Pricing</a>
+      <a href="#contact" onClick="{{ closeMenu }}" style="padding:8px 18px;color:#f4f1ea">Contact</a><span class="lang-sw" style="display:inline-flex;gap:7px;align-items:center;margin-left:16px;font-size:13px;letter-spacing:.06em;vertical-align:middle"><a href="../en/tarife.html" style="color:#ffc400;font-weight:700;text-decoration:none">EN</a><span style="opacity:.35">/</span><a href="../de/tarife.html" style="color:rgba(234,236,239,0.6);text-decoration:none">DE</a></span>
+    </div>
+    <div style="margin-top:30px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+      <a href="https://wa.me/37379840751" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(234,236,239,0.70);border:1px solid rgba(234,236,239,0.16);border-radius:9999px;padding:12px 20px">WhatsApp</a>
+      <a href="https://t.me/alexqabl" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(234,236,239,0.70);border:1px solid rgba(234,236,239,0.16);border-radius:9999px;padding:12px 20px">Telegram</a>
+    </div>
+  </div>
+
+  <header style="padding:clamp(54px,8vw,100px) 0 clamp(20px,3vw,32px)" data-screen-label="Hero">
+    <div style="max-width:1180px;margin:0 auto;padding:0 28px">
+      <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:rgba(234,236,239,0.50);display:flex;align-items:center;gap:12px"><span style="color:#ffc400">✦</span> 47°01′N 28°51′E <span style="color:#ffc400">/</span> Pricing · 2026</div>
+      <h1 style="font-family:'Anton','Arial Black',Impact,sans-serif;font-weight:400;text-transform:uppercase;line-height:1;letter-spacing:0.01em;margin-top:24px">
+        <div ref="{{ heroRef }}" style="font-size:clamp(64px,15vw,210px);display:flex">
+          <span style="display:inline-block;color:#ffc400;text-shadow:0 0 30px rgba(255,196,0,0.24),0 0 90px rgba(255,196,0,0.12)">T</span><span style="display:inline-block;color:#ffc400;text-shadow:0 0 30px rgba(255,196,0,0.24),0 0 90px rgba(255,196,0,0.12)">A</span><span style="display:inline-block;color:#ffc400;text-shadow:0 0 30px rgba(255,196,0,0.24),0 0 90px rgba(255,196,0,0.12)">R</span><span style="display:inline-block;color:#ffc400;text-shadow:0 0 30px rgba(255,196,0,0.24),0 0 90px rgba(255,196,0,0.12)">I</span><span style="display:inline-block;color:#ffc400;text-shadow:0 0 30px rgba(255,196,0,0.24),0 0 90px rgba(255,196,0,0.12)">F</span><span style="display:inline-block;color:#ffc400;text-shadow:0 0 30px rgba(255,196,0,0.24),0 0 90px rgba(255,196,0,0.12)">E</span>
+        </div>
+        <div style="font-size:clamp(24px,4.4vw,62px);color:#f4f1ea;margin-top:4px">For video editing</div>
+      </h1>
+      <div style="display:flex;flex-wrap:wrap;margin-top:clamp(32px,4vw,52px);border-top:1px solid rgba(234,236,239,0.16);border-bottom:1px solid rgba(234,236,239,0.16);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(234,236,239,0.70)">
+        <div style="flex:1 1 180px;padding:18px 22px;display:flex;align-items:center;gap:10px"><span style="width:7px;height:7px;border-radius:50%;background:#ffc400;box-shadow:0 0 8px rgba(255,196,0,0.24);flex:none"></span>Delivery in 4 days</div>
+        <div style="flex:1 1 180px;padding:18px 22px;display:flex;align-items:center;gap:10px;border-left:1px solid rgba(234,236,239,0.09)"><span style="width:7px;height:7px;border-radius:50%;background:#ffc400;box-shadow:0 0 8px rgba(255,196,0,0.24);flex:none"></span>We adapt to your style</div>
+        <div style="flex:1 1 180px;padding:18px 22px;display:flex;align-items:center;gap:10px;border-left:1px solid rgba(234,236,239,0.09)"><span style="width:7px;height:7px;border-radius:50%;background:#ffc400;box-shadow:0 0 8px rgba(255,196,0,0.24);flex:none"></span>4 years of experience</div>
+      </div>
+    </div>
+  </header>
+
+  <section id="pachete" style="padding:clamp(20px,3vw,34px) 0 clamp(24px,3vw,44px)" data-screen-label="Packages">
+    <div style="max-width:1180px;margin:0 auto;padding:0 28px">
+      <h2 style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(30px,4.4vw,62px);font-weight:400;line-height:1.1;letter-spacing:0.004em;text-transform:uppercase">Choose the right package</h2>
+      <p style="color:rgba(234,236,239,0.70);font-size:clamp(16px,1.5vw,19px);line-height:1.55;max-width:560px;margin:16px 0 0;text-wrap:pretty"><span data-anim="1" style="font-weight:700;background:linear-gradient(90deg,#ff9d00 0%,#ffc400 25%,#fff4c2 50%,#ffc400 75%,#ff9d00 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:shimmerText 6s ease-in-out infinite">Prices are indicative.</span> We will prepare an individual quote tailored to your project — just get in touch.</p>
+
+      <div style="display:grid;grid-template-columns:{{ pkCols }};gap:clamp(30px,5vw,72px);align-items:start;margin-top:clamp(34px,4vw,54px)">
+        <div>
+          <div style="display:grid;grid-template-columns:{{ rowCols }};gap:18px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(234,236,239,0.48);padding-bottom:14px;border-bottom:1px solid rgba(234,236,239,0.16)"><span>Format</span><span>Cost</span><sc-if value="{{ showDur }}" hint-placeholder-val="{{ true }}"><span style="text-align:right">Duration</span></sc-if></div>
+          <sc-for list="{{ pkgs }}" as="p" hint-placeholder-count="5">
+            <div tabIndex="0" onMouseEnter="{{ p.hover }}" onClick="{{ p.pick }}" onFocus="{{ p.pick }}" style="display:grid;grid-template-columns:{{ rowCols }};gap:18px;align-items:center;padding:clamp(20px,2.4vw,30px) 0;padding-left:{{ p.pad }};border-bottom:1px solid rgba(234,236,239,0.09);cursor:pointer;opacity:{{ p.op }};transition:opacity .35s ease,padding-left .35s ease;outline:none" style-hover="opacity:1;padding-left:10px">
+              <span style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(24px,2.7vw,40px);font-weight:400;text-transform:uppercase;line-height:1;letter-spacing:0.01em;transition:color .35s ease;color:{{ p.color }}">{{ p.name }}</span>
+              <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:clamp(13px,1.3vw,16px);font-weight:700;letter-spacing:0.04em;">{{ p.price }}</span>
+              <sc-if value="{{ showDur }}" hint-placeholder-val="{{ true }}"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.08em;color:rgba(234,236,239,0.48);;text-align:right">{{ p.dur }}</span></sc-if>
+            </div>
+          </sc-for>
+          <div style="display:flex;align-items:center;gap:12px;margin-top:24px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;letter-spacing:0.08em;color:rgba(255,255,255,0.72)"><span style="width:8px;height:8px;border-radius:50%;background:#ffc400;flex:none"></span>Prices include 15% VAT</div>
+        </div>
+
+        <sc-if value="{{ showPanel }}" hint-placeholder-val="{{ true }}">
+          <div style="position:sticky;top:96px;border:1px solid rgba(234,236,239,0.16);border-radius:18px;overflow:hidden;background:linear-gradient(180deg, rgba(255,196,0,0.05), rgba(255,255,255,0.015))">
+            <div style="position:relative;aspect-ratio:16/10;overflow:hidden;border-bottom:1px solid rgba(234,236,239,0.09);background:#070707">
+              <img src="{{ imgA }}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(0.25) brightness(0.85) contrast(1.04);transition:opacity .6s ease;opacity:{{ opA }}">
+              <img src="{{ imgB }}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(0.25) brightness(0.85) contrast(1.04);transition:opacity .6s ease;opacity:{{ opB }}">
+            </div>
+            <div style="padding:clamp(22px,2.6vw,34px)">
+              <div style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(40px,5vw,68px);line-height:0.9;color:#ffc400;text-shadow:0 0 30px rgba(255,196,0,0.24)"><span style="display:block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:rgba(234,236,239,0.48);text-shadow:none;margin-bottom:6px">from</span>{{ num }}€</div>
+              <p style="color:rgba(234,236,239,0.70);font-size:clamp(15px,1.5vw,18px);line-height:1.6;margin:22px 0 0;max-width:42ch;min-height:7.7em;transition:opacity .5s ease,transform .5s ease,filter .5s ease;opacity:{{ descOp }};transform:{{ descT }};filter:{{ descF }}">{{ desc }}</p>
+              <a href="https://wa.me/37379840751" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;margin-top:26px;border-radius:9999px;padding:14px 24px;background:#ffc400;color:#000;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;transition:background .2s ease,transform .2s ease" style-hover="color:#000;background:#ffd333;transform:translateY(-1px)">Write to me →</a>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="position:relative;padding:clamp(40px,6vw,88px) 0 clamp(48px,6vw,88px);background:#0a0a0a" data-screen-label="Contact">
+    <div style="position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(115deg, rgba(234,236,239,0.035) 0px, rgba(234,236,239,0.035) 1px, transparent 1px, transparent 18px);opacity:0.5"></div>
+    <div style="position:relative;max-width:1300px;margin:0 auto;padding:0 28px">
+      <div style="position:relative">
+        <div style="position:absolute;top:-14px;left:-14px;width:18px;height:18px;border-top:1.5px solid rgba(255,196,0,0.5);border-left:1.5px solid rgba(255,196,0,0.5)"></div>
+        <div style="position:absolute;top:-14px;right:-14px;width:18px;height:18px;border-top:1.5px solid rgba(255,196,0,0.5);border-right:1.5px solid rgba(255,196,0,0.5)"></div>
+        <div style="position:relative;overflow:hidden;border-radius:44px;border:1.5px solid rgba(255,196,0,0.5);background:rgba(0,0,0,0.22);padding:clamp(36px,5vw,56px) clamp(24px,5vw,64px)">
+          <div style="position:absolute;top:-30%;right:-10%;width:60%;height:120%;pointer-events:none;background:radial-gradient(circle at 70% 30%, rgba(255,196,0,0.12), rgba(255,150,0,0.04) 40%, transparent 65%)"></div>
+          <div style="position:relative">
+            <h2 style="display:flex;flex-wrap:wrap;align-items:baseline;column-gap:18px;row-gap:6px;font-size:clamp(22px,2.6vw,36px);line-height:1;margin:0">
+              <span style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:3em;font-style:italic;font-weight:800;letter-spacing:0.01em;text-transform:uppercase;color:#ffc400;line-height:0.95">Contacts</span>
+              <span style="font-family:'Inter',-apple-system,sans-serif;font-weight:500;color:#f4f1ea;letter-spacing:-0.005em">for a partnership you can trust</span>
+            </h2>
+            <p style="margin:28px 0 0;max-width:680px;font-size:clamp(17px,1.6vw,22px);line-height:1.5;color:rgba(244,241,234,0.82);text-wrap:pretty"><span style="color:#ffc400;font-weight:700">Write to me now.</span> You get a post-production partner who understands your style and makes the process simpler, faster and more professional.</p>
+            <div style="display:grid;grid-template-columns:{{ btnCols }};gap:16px;margin-top:44px">
+          <a href="https://wa.me/37379840751" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;gap:12px;height:68px;padding:0 30px;border-radius:9999px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;;transition:border-color .25s ease,color .25s ease,background .25s ease;border:1px solid #ffc400;background:#ffc400;color:#0a0a0a" style-hover="color:#0a0a0a;background:#ffd333;border-color:#ffd333"><svg width="20" height="20" style="flex:none" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.515 5.26l-.999 3.648 3.973-1.305zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path></svg><span>WhatsApp</span></a>
+          <a href="https://t.me/alexqabl" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;gap:12px;height:68px;padding:0 30px;border-radius:9999px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;;transition:border-color .25s ease,color .25s ease,background .25s ease;border:1px solid rgba(160,140,110,0.38);background:transparent;color:#f4f1ea" style-hover="border-color:#ffc400;color:#f4f1ea"><svg width="20" height="20" style="flex:none" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.231-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"></path></svg><span>Telegram</span></a>
+          
+          <a href="https://www.facebook.com/profile.php?id=61591004736764&amp;locale=ru_RU" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;gap:12px;height:68px;padding:0 30px;border-radius:9999px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;;transition:border-color .25s ease,color .25s ease,background .25s ease;border:1px solid rgba(160,140,110,0.38);background:transparent;color:#f4f1ea" style-hover="border-color:#ffc400;color:#f4f1ea"><svg width="20" height="20" style="flex:none" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg><span>Facebook</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="border-top:1px solid rgba(234,236,239,0.12);background:#0a0a0a">
+    <div style="max-width:1300px;margin:0 auto;padding:56px 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:36px;align-items:start">
+      <div>
+        <div style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:24px;letter-spacing:0.04em;text-transform:uppercase;color:#f4f1ea">Your <span style="color:#ffc400">Editor</span></div>
+        <p style="margin:14px 0 0;color:rgba(234,236,239,0.50);font-size:14px;line-height:1.6;max-width:280px">Outsourced post-production for wedding videographers.</p>
+      </div>
+      <div style="justify-self:{{ footRight }}">
+        <div style="color:rgba(234,236,239,0.50);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:16px">Contact</div>
+        <div style="display:flex;flex-direction:column;gap:13px;font-size:15px;line-height:1.3">
+          <div style="display:flex;align-items:center;gap:12px;color:rgba(234,236,239,0.70)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"></path></svg><span>Alexandr Ciornii</span></div>
+          <a href="https://wa.me/37379840751" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;color:rgba(234,236,239,0.70);transition:color .2s ease" style-hover="color:#ffc400"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M21 16.5v2.6a1.7 1.7 0 0 1-1.9 1.7 17 17 0 0 1-7.4-2.6 16.7 16.7 0 0 1-5.1-5.1A17 17 0 0 1 4 5.7 1.7 1.7 0 0 1 5.7 4h2.6a1.7 1.7 0 0 1 1.7 1.5c.1.8.3 1.5.6 2.2a1.7 1.7 0 0 1-.4 1.8l-1 1a13.5 13.5 0 0 0 5.1 5.1l1-1a1.7 1.7 0 0 1 1.8-.4c.7.3 1.4.5 2.2.6a1.7 1.7 0 0 1 1.4 1.7z"></path></svg><span>+373 798 40 751 · WhatsApp</span></a>
+          <a href="https://t.me/alexqabl" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;color:rgba(234,236,239,0.70);transition:color .2s ease" style-hover="color:#ffc400"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M21 4 10.5 14.5"></path><path d="M21 4 14.5 21l-4-8.5L2 8.5 21 4z"></path></svg><span>Telegram · @alexqabl</span></a>
+          
+          <a href="https://www.facebook.com/profile.php?id=61591004736764&amp;locale=ru_RU" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;color:rgba(234,236,239,0.70);transition:color .2s ease" style-hover="color:#ffc400"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M17 3h-3a4 4 0 0 0-4 4v3H7v4h3v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h2z"></path></svg><span>Facebook</span></a>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1300px;margin:0 auto;padding:0 28px 40px;color:rgba(234,236,239,0.26);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.04em">© 2026 Your Editor</div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const PKGS = [
+  { name: 'Highlight', num: 180, price: 'from €180', dur: '3–10 minutes', img: '../uploads/highlight.webp', desc: 'The most intense emotions, glances and tears of joy, gathered into a short film that is memorable and easy to relive.' },
+  { name: 'Full film', num: 250, price: 'from €250', dur: '60–120 minutes', img: '../uploads/film-complet.webp', desc: 'The whole wedding day — preparations, ceremony, toasts, dancing and family — edited into a clear, cinematic story in your style.' }, { name: 'Highlight + Full film', num: 400, price: 'from €400', dur: '3–120 minutes', img: '../uploads/film-complet.webp', desc: 'Both films in one package — the highlight and the full film together, at a better price.' },
+  { name: 'Love Story', num: 150, price: 'from €150', dur: 'up to 3 minutes', img: '../uploads/love-story.webp', desc: 'Glances, small gestures and honest smiles turned into a tender, elegant and heartfelt film.' },
+  { name: 'Social media reel', num: 70, price: 'from €70', dur: '30–90 seconds', img: '../uploads/reel-social-media.webp', desc: 'The most visual shots, edited into a short, dynamic reel built to grab attention from the first seconds.' },
+];
+class Component extends DCLogic {
+  state = { w: typeof window !== 'undefined' ? window.innerWidth : 1280, menu: false, idx: 0, num: 180, desc: PKGS[0].desc, fading: false, imgA: PKGS[0].img, imgB: PKGS[0].img, front: 'A' };
+  heroRef = React.createRef();
+  componentDidMount() {
+    this.onResize = () => { this.setState({ w: window.innerWidth }); clearTimeout(this.mt); this.mt = setTimeout(() => this.meas(), 200); };
+    window.addEventListener('resize', this.onResize);
+    PKGS.forEach(p => { const i = new Image(); i.src = p.img; });
+    this.reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.fine = window.matchMedia('(pointer:fine)').matches;
+    if (!this.reduce && this.fine) {
+      this.mx = -1e4; this.my = -1e4; this.rc = [];
+      this.onMove = e => { this.mx = e.clientX; this.my = e.clientY; };
+      window.addEventListener('pointermove', this.onMove);
+      setTimeout(() => this.meas(), 320);
+      const R = 120, MAX = 14;
+      const loop = () => {
+        for (const p of this.rc) {
+          const dx = this.mx - p.cx, dy = this.my + window.pageYOffset - p.cy, d = Math.hypot(dx, dy);
+          let gx = 0, gy = 0, gr = 0;
+          if (d < R) { const f = 1 - d / R; gx = dx / (d || 1) * f * MAX; gy = dy / (d || 1) * f * MAX; gr = dx / (d || 1) * f * 4; }
+          p.tx += (gx - p.tx) * 0.18; p.ty += (gy - p.ty) * 0.18; p.tr += (gr - p.tr) * 0.18;
+          p.el.style.transform = `translate(${p.tx.toFixed(2)}px,${p.ty.toFixed(2)}px) rotate(${p.tr.toFixed(2)}deg)`;
+        }
+        this.raf = requestAnimationFrame(loop);
+      };
+      loop();
+    }
+    if (location.hash === '#contact') [60, 400].forEach(t => setTimeout(() => { const el = document.getElementById('contact'); if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 12 }); }, t));
+  }
+  meas() {
+    const box = this.heroRef.current; if (!box) return;
+    const sy = window.pageYOffset;
+    this.rc = Array.from(box.querySelectorAll('span')).map(el => {
+      const pv = el.style.transform; el.style.transform = 'none';
+      const r = el.getBoundingClientRect(); el.style.transform = pv;
+      return { el, cx: r.left + r.width / 2, cy: r.top + r.height / 2 + sy, tx: 0, ty: 0, tr: 0 };
+    });
+    this.sy0 = sy;
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+    if (this.onMove) window.removeEventListener('pointermove', this.onMove);
+    cancelAnimationFrame(this.raf); cancelAnimationFrame(this.numRaf);
+    clearTimeout(this.descT); clearTimeout(this.mt);
+    document.body.style.overflow = '';
+  }
+  setMenu(open) { document.body.style.overflow = open ? 'hidden' : ''; this.setState({ menu: open }); }
+  select(i) {
+    if (i === this.state.idx) return;
+    const p = PKGS[i];
+    const back = this.state.front === 'A' ? 'B' : 'A';
+    this.setState({ idx: i, ['img' + back]: p.img }, () => requestAnimationFrame(() => requestAnimationFrame(() => this.setState({ front: back }))));
+    if (this.reduce) { this.setState({ num: p.num, desc: p.desc }); return; }
+    cancelAnimationFrame(this.numRaf);
+    const from = this.state.num, to = p.num; let start = null;
+    const step = t => { if (!start) start = t; const k = Math.min(1, (t - start) / 480); this.setState({ num: Math.round(from + (to - from) * (1 - Math.pow(1 - k, 3))) }); if (k < 1) this.numRaf = requestAnimationFrame(step); };
+    this.numRaf = requestAnimationFrame(step);
+    clearTimeout(this.descT);
+    this.setState({ fading: true });
+    this.descT = setTimeout(() => this.setState({ desc: p.desc }, () => requestAnimationFrame(() => requestAnimationFrame(() => this.setState({ fading: false })))), 260);
+  }
+  renderVals() {
+    const { w, menu, idx, num, desc, fading, imgA, imgB, front } = this.state;
+    const mob = w <= 760, wide = w > 900, small = w <= 680, dur = w > 680;
+    return {
+      desk: !mob, mob, heroRef: this.heroRef,
+      toggleMenu: () => this.setMenu(!menu), closeMenu: () => this.setMenu(false),
+      bar1: menu ? 'translateY(7px) rotate(45deg)' : 'none', bar2: menu ? 0 : 1, bar3: menu ? 'translateY(-7px) rotate(-45deg)' : 'none',
+      menuOpacity: menu ? 1 : 0, menuPE: menu ? 'auto' : 'none', menuHidden: menu ? 'false' : 'true',
+      pkCols: wide ? '1.05fr 0.95fr' : '1fr', showPanel: wide, showDur: dur, rowCols: dur ? 'minmax(0,1fr) 120px 140px' : 'minmax(0,1fr) 110px',
+      pkgs: PKGS.map((p, i) => ({ ...p, op: i === idx ? 1 : 0.6, pad: i === idx ? '10px' : '0px', color: i === idx ? '#ffc400' : '#f4f1ea', pick: () => this.select(i), hover: () => { if (this.fine) this.select(i); } })),
+      num, desc, imgA, imgB, opA: front === 'A' ? 1 : 0, opB: front === 'B' ? 1 : 0,
+      descOp: fading ? 0 : 1, descT: fading ? 'translateY(8px)' : 'none', descF: fading ? 'blur(4px)' : 'none',
+      btnCols: w > 1040 ? 'repeat(4,max-content)' : 'repeat(2,minmax(0,1fr))', footRight: w > 640 ? 'end' : 'start',
+      cardPad: small ? '0px' : 'clamp(28px,4vw,56px)', innerPad: small ? '34px 22px' : '56px 64px', innerRad: small ? '32px' : '44px', bigSize: small ? '1.6em' : '2.2em',
+    };
+  }
+}
+</script>
+</body>
+</html>

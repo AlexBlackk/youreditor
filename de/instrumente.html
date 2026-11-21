@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../support.js"></script>
+<link rel="alternate" hreflang="en" href="https://youreditor.uk/en/instrumente.html"><link rel="alternate" hreflang="de" href="https://youreditor.uk/de/instrumente.html"><link rel="alternate" hreflang="x-default" href="https://youreditor.uk/en/instrumente.html"></head>
+<body>
+<x-dc>
+<helmet>
+<title>Your Editor — Tools</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#000;color:#f4f1ea;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:clip}
+a{color:inherit;text-decoration:none}
+a:hover{color:inherit}
+h1,h2,h3{margin:0}
+@property --frameGlow{syntax:'<angle>';inherits:false;initial-value:0deg}
+@keyframes etLines{from{background-position:0 0}to{background-position:220px 0}}
+@keyframes frameGlowTravel{to{--frameGlow:360deg}}
+@keyframes glowTravel{0%{left:2%;transform:translateY(-50%) scale(1);opacity:.8}50%{left:48%;transform:translateY(-50%) scale(1.1);opacity:1}100%{left:2%;transform:translateY(-50%) scale(1);opacity:.8}}
+@media(max-width:768px),(prefers-reduced-motion:reduce){[data-anim]{animation:none!important}}
+@keyframes socBounce{0%,100%{transform:scale(1.12) translateY(-4px)}50%{transform:scale(1.12) translateY(-10px)}}
+</style>
+</helmet>
+<div style="position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(circle at 50% 0%, rgba(255,196,0,0.10), transparent 42%),radial-gradient(circle at 50% 120%, rgba(255,196,0,0.05), transparent 45%),linear-gradient(180deg,#0a0908 0%,#000 55%)"></div>
+<div style="position:fixed;inset:0;z-index:0;pointer-events:none;background:repeating-linear-gradient(115deg, rgba(234,236,239,0.04) 0px, rgba(234,236,239,0.04) 1px, transparent 1px, transparent 18px);opacity:0.18;transform:scale(1.1);animation:etLines 16s linear infinite"></div>
+
+<div style="position:relative;z-index:1">
+
+  <nav style="position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(0,0,0,0.55);border-bottom:1px solid rgba(234,236,239,0.12)">
+    <div style="max-width:1180px;margin:0 auto;padding:15px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <a href="index.html" style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:20px;letter-spacing:0.04em;text-transform:uppercase;;color:#f4f1ea">Your <span style="color:#ffc400">Editor</span></a>
+      <sc-if value="{{ desk }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;align-items:center;gap:26px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase">
+          <a href="cum-lucram.html" style="color:rgba(234,236,239,0.70);transition:color .2s ease" style-hover="color:#f4f1ea">Wie wir arbeiten</a>
+          <a href="portofoliu.html" style="color:rgba(234,236,239,0.70);transition:color .2s ease" style-hover="color:#f4f1ea">Portfolio</a>
+          <a href="#" style="color:#ffc400">Tools</a>
+          <a href="tarife.html" style="color:rgba(234,236,239,0.70);transition:color .2s ease" style-hover="color:#f4f1ea">Preise</a>
+          <a href="tarife.html#contact" style="color:rgba(234,236,239,0.70);transition:color .2s ease" style-hover="color:#f4f1ea">Kontakt</a><span class="lang-sw" style="display:inline-flex;gap:7px;align-items:center;margin-left:16px;font-size:13px;letter-spacing:.06em;vertical-align:middle"><a href="../en/instrumente.html" style="color:rgba(234,236,239,0.6);text-decoration:none">EN</a><span style="opacity:.35">/</span><a href="../de/instrumente.html" style="color:#ffc400;font-weight:700;text-decoration:none">DE</a></span>
+        </div>
+      </sc-if>
+      <sc-if value="{{ mob }}" hint-placeholder-val="{{ false }}">
+        <button onClick="{{ toggleMenu }}" aria-label="Meniu" style="width:44px;height:44px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;border:none;background:transparent;cursor:pointer;padding:0;position:relative;z-index:130">
+          <span style="display:block;width:24px;height:2px;background:#f4f1ea;border-radius:2px;transition:transform .3s ease;transform:{{ bar1 }}"></span>
+          <span style="display:block;width:24px;height:2px;background:#f4f1ea;border-radius:2px;transition:opacity .2s ease;opacity:{{ bar2 }}"></span>
+          <span style="display:block;width:24px;height:2px;background:#f4f1ea;border-radius:2px;transition:transform .3s ease;transform:{{ bar3 }}"></span>
+        </button>
+      </sc-if>
+    </div>
+  </nav>
+
+  <div aria-hidden="{{ menuHidden }}" style="position: fixed; inset: 0; z-index: 120; background: rgba(7,7,7,0.985); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity .28s ease; opacity: {{ menuOpacity }}; pointer-events: {{ menuPE }}; left: 125px; top: 77px">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(32px,9vw,50px);line-height:1.22;letter-spacing:0.02em;text-transform:uppercase">
+      <a href="index.html" onClick="{{ closeMenu }}" style="padding:8px 18px;color:#f4f1ea">Startseite</a>
+      <a href="cum-lucram.html" onClick="{{ closeMenu }}" style="padding:8px 18px;color:#f4f1ea">Wie wir arbeiten</a>
+      <a href="portofoliu.html" onClick="{{ closeMenu }}" style="padding:8px 18px;color:#f4f1ea">Portfolio</a>
+      <a href="#" onClick="{{ closeMenu }}" style="padding:8px 18px;color:#ffc400">Tools</a>
+      <a href="tarife.html" onClick="{{ closeMenu }}" style="padding:8px 18px;color:#f4f1ea">Preise</a>
+      <a href="tarife.html#contact" onClick="{{ closeMenu }}" style="padding:8px 18px;color:#f4f1ea">Kontakt</a><span class="lang-sw" style="display:inline-flex;gap:7px;align-items:center;margin-left:16px;font-size:13px;letter-spacing:.06em;vertical-align:middle"><a href="../en/instrumente.html" style="color:rgba(234,236,239,0.6);text-decoration:none">EN</a><span style="opacity:.35">/</span><a href="../de/instrumente.html" style="color:#ffc400;font-weight:700;text-decoration:none">DE</a></span>
+    </div>
+    <div style="margin-top:30px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+      <a href="https://wa.me/37379840751" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(234,236,239,0.70);border:1px solid rgba(234,236,239,0.16);border-radius:9999px;padding:12px 20px">WhatsApp</a>
+      <a href="https://t.me/alexqabl" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(234,236,239,0.70);border:1px solid rgba(234,236,239,0.16);border-radius:9999px;padding:12px 20px">Telegram</a>
+    </div>
+  </div>
+
+  <header style="padding:clamp(54px,8vw,96px) 0 48px" data-screen-label="Hero">
+    <div style="max-width:1180px;margin:0 auto;padding:0 28px">
+      <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:rgba(234,236,239,0.50);display:flex;align-items:center;gap:12px"><span style="color:#ffc400">✦</span> Was ein Freelancer nicht hat</div>
+      <h1 style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:clamp(56px,12vw,150px);font-weight:400;line-height:0.95;text-transform:uppercase;margin-top:24px">Tools</h1>
+      <p style="margin:22px 0 0;color:rgba(234,236,239,0.70);font-size:clamp(17px,1.6vw,21px);line-height:1.5;max-width:600px;text-wrap:pretty">Den Schnitt macht der Mensch. Die Routine — <span style="color:#ffc400">die KI-Tools</span>.</p>
+    </div>
+  </header>
+
+  <section style="max-width:1180px;margin:0 auto;padding:0 28px" data-screen-label="Tools">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(28px,4vw,56px);align-items:center;padding:60px 0;border-top:1px solid rgba(234,236,239,0.09)">
+      <div><img src="../images/sync-timeline.webp" alt="SYNC" style="width:100%;border-radius:12px;border:1px solid rgba(234,236,239,0.16);display:block;box-shadow:0 34px 90px rgba(0,0,0,0.6)"></div>
+      <div>
+        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#ffc400">★ Sync</div>
+        <h2 style="font-family:'Anton','Arial Black',Impact,sans-serif;font-weight:400;font-size:clamp(36px,5vw,64px);text-transform:uppercase;line-height:0.95;margin:12px 0 0;color:#ffc400;text-shadow:0 0 30px rgba(255,196,0,0.30)">SYNC</h2>
+        <div style="color:#f4f1ea;opacity:0.86;font-size:15.5px;line-height:1.6;margin:16px 0 0;text-wrap:pretty">Du öffnest das Projekt — SYNC erkennt die Timelines und legt die Clips auf den Ton. Zwei oder mehr Kameras, mit oder ohne Recorder. Sekunden, keine Stunden.</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 0"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.06em;color:rgba(234,236,239,0.70);border:1px solid rgba(234,236,239,0.16);border-radius:7px;padding:6px 11px">DaVinci Resolve</span></div>
+        <div style="margin:22px 0 0">
+          <div style="display:flex;gap:13px;align-items:flex-start;padding:16px 0;border-bottom:1px solid rgba(234,236,239,0.09)"><span style="color:#ffc400;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:700;margin-top:2px">→</span><div><div style="font-weight:600;font-size:15px">Legt die Clips auf den Ton</div><div style="color:rgba(234,236,239,0.70);font-size:13.5px;line-height:1.5;margin-top:3px">Jeder Clip landet an seinem Platz — relativ zum Recorder oder zu den anderen Kameras.</div></div></div>
+          <div style="display:flex;gap:13px;align-items:flex-start;padding:16px 0;border-bottom:1px solid rgba(234,236,239,0.09)"><span style="color:#ffc400;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:700;margin-top:2px">→</span><div><div style="font-weight:600;font-size:15px">Entfernt die Leerstellen</div><div style="color:rgba(234,236,239,0.70);font-size:13.5px;line-height:1.5;margin-top:3px">Es verschwindet nur die Zeit, in der keine Kamera filmt.</div></div></div>
+          <div style="display:flex;gap:13px;align-items:flex-start;padding:16px 0;border-bottom:1px solid rgba(234,236,239,0.09)"><span style="color:#ffc400;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:700;margin-top:2px">→</span><div><div style="font-weight:600;font-size:15px">Zeigt dir, was nicht gepasst hat</div><div style="color:rgba(234,236,239,0.70);font-size:13.5px;line-height:1.5;margin-top:3px">Schwache Clips sind farbig markiert — du siehst sie auf einen Blick.</div></div></div>
+          <div style="display:flex;gap:13px;align-items:flex-start;padding:16px 0;border-bottom:1px solid rgba(234,236,239,0.09)"><span style="color:#ffc400;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:700;margin-top:2px">→</span><div><div style="font-weight:600;font-size:15px">Bewahrt das Original</div><div style="color:rgba(234,236,239,0.70);font-size:13.5px;line-height:1.5;margin-top:3px">Die originale Timeline wird als XML gespeichert — jederzeit importierbar.</div></div></div>
+        </div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(28px,4vw,56px);align-items:center;padding:60px 0;border-top:1px solid rgba(234,236,239,0.09)">
+      <div style="order:{{ revOrder }}">
+        <div style="border:1px solid rgba(255,196,0,0.5);border-radius:16px;padding:clamp(14px,1.6vw,20px);background:linear-gradient(180deg,rgba(255,196,0,0.08),rgba(255,255,255,0.012));box-shadow:0 0 0 1px rgba(255,196,0,0.10),0 24px 60px rgba(0,0,0,0.45)">
+          <div style="position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:linear-gradient(160deg,#1a1712,#0b0a08 70%);border:1px solid rgba(234,236,239,0.12)">
+            <div style="position:absolute;left:38%;top:30%;width:26%;height:38%;border:2px solid #ffc400;border-radius:50%;transform:rotate(-8deg);box-shadow:0 0 18px rgba(255,196,0,0.35)"></div>
+            <div style="position:absolute;left:62%;top:22%;display:flex;align-items:center;gap:6px;padding:4px 8px;border-radius:6px;background:#ffc400;color:#000;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;font-weight:700;letter-spacing:0.06em"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l4-1 11-11-3-3L5 16z"></path></svg><span>00:48:12</span></div>
+            <div style="position:absolute;left:12px;right:12px;bottom:12px;display:flex;align-items:center;gap:10px">
+              <span style="width:0;height:0;border-left:9px solid #f4f1ea;border-top:6px solid transparent;border-bottom:6px solid transparent;flex:none"></span>
+              <div style="position:relative;flex:1;height:4px;border-radius:2px;background:rgba(234,236,239,0.18)">
+                <div style="position:absolute;left:0;top:0;bottom:0;width:62%;border-radius:2px;background:rgba(244,241,234,0.7)"></div>
+                <span style="position:absolute;left:18%;top:50%;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:#ffc400"></span>
+                <span style="position:absolute;left:41%;top:50%;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:#ffc400"></span>
+                <span style="position:absolute;left:62%;top:50%;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:#ffc400;box-shadow:0 0 0 4px rgba(255,196,0,0.25)"></span>
+                <span style="position:absolute;left:83%;top:50%;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:rgba(234,236,239,0.45)"></span>
+              </div>
+              <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.06em;color:rgba(234,236,239,0.7);flex:none">1:24:00</span>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px">
+            <div style="display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,0.025);border:1px solid rgba(234,236,239,0.09)">
+              <span style="width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;flex:none;background:rgba(255,196,0,0.12);color:#ffc400"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 6h14M12 6v13"></path></svg></span>
+              <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.06em;color:#ffc400;flex:none">00:12:04</span>
+              <span style="display:flex;flex-direction:column;gap:5px;flex:1"><span style="height:5px;border-radius:3px;background:rgba(234,236,239,0.22);width:78%"></span><span style="height:5px;border-radius:3px;background:rgba(234,236,239,0.22);width:46%"></span></span>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,0.025);border:1px solid rgba(234,236,239,0.09)">
+              <span style="width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;flex:none;background:rgba(255,196,0,0.12);color:#ffc400"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5 11a7 7 0 0 0 14 0M12 18v3"></path></svg></span>
+              <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.06em;color:#ffc400;flex:none">00:31:40</span>
+              <span style="display:flex;align-items:center;gap:3px;flex:1"><span style="width:3px;height:6px;border-radius:2px;background:rgba(234,236,239,0.55)"></span><span style="width:3px;height:12px;border-radius:2px;background:rgba(234,236,239,0.55)"></span><span style="width:3px;height:8px;border-radius:2px;background:rgba(234,236,239,0.55)"></span><span style="width:3px;height:16px;border-radius:2px;background:rgba(234,236,239,0.55)"></span><span style="width:3px;height:10px;border-radius:2px;background:rgba(234,236,239,0.55)"></span><span style="width:3px;height:14px;border-radius:2px;background:rgba(234,236,239,0.55)"></span><span style="width:3px;height:6px;border-radius:2px;background:rgba(234,236,239,0.55)"></span><span style="width:3px;height:11px;border-radius:2px;background:rgba(234,236,239,0.55)"></span><span style="width:3px;height:15px;border-radius:2px;background:rgba(234,236,239,0.55)"></span><span style="width:3px;height:7px;border-radius:2px;background:rgba(234,236,239,0.55)"></span><span style="width:3px;height:12px;border-radius:2px;background:rgba(234,236,239,0.55)"></span><span style="width:3px;height:9px;border-radius:2px;background:rgba(234,236,239,0.55)"></span><span style="width:3px;height:5px;border-radius:2px;background:rgba(234,236,239,0.55)"></span></span><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;color:rgba(234,236,239,0.5)">0:08</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;background:rgba(255,196,0,0.08);border:1px solid rgba(255,196,0,0.35)">
+              <span style="width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;flex:none;background:rgba(255,196,0,0.12);color:#ffc400"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l4-1 11-11-3-3L5 16z"></path></svg></span>
+              <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.06em;color:#ffc400;flex:none">00:48:12</span>
+              <span style="display:flex;flex-direction:column;gap:5px;flex:1"><span style="height:5px;border-radius:3px;background:rgba(234,236,239,0.22);width:60%"></span></span><span style="width:16px;height:16px;border-radius:50%;background:#ffc400;color:#000;display:flex;align-items:center;justify-content:center;flex:none"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"></path></svg></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#ffc400">★ Korrekturen</div>
+        <h2 style="font-family:'Anton','Arial Black',Impact,sans-serif;font-weight:400;font-size:clamp(36px,5vw,64px);text-transform:uppercase;line-height:0.95;margin:12px 0 0;color:#ffc400;text-shadow:0 0 30px rgba(255,196,0,0.30)">Your Editor<br>Review</h2>
+        <div style="color:#f4f1ea;opacity:0.86;font-size:15.5px;line-height:1.6;margin:16px 0 0;text-wrap:pretty">Der Videograf meldet sich in seinem Bereich an, sieht den Schnitt und hinterlässt Korrekturen per Timecode — Text, Sprache oder Zeichnung im Bild. Kein WhatsApp, keine Screenshots.</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 0"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.06em;color:rgba(234,236,239,0.70);border:1px solid rgba(234,236,239,0.16);border-radius:7px;padding:6px 11px">Kunden-Login</span><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.06em;color:rgba(234,236,239,0.70);border:1px solid rgba(234,236,239,0.16);border-radius:7px;padding:6px 11px">Stream in jeder Länge</span><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.06em;color:rgba(234,236,239,0.70);border:1px solid rgba(234,236,239,0.16);border-radius:7px;padding:6px 11px">DaVinci-Download</span></div>
+        <div style="margin:22px 0 0">
+          <div style="display:flex;gap:13px;align-items:flex-start;padding:16px 0;border-bottom:1px solid rgba(234,236,239,0.09)"><span style="color:#ffc400;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:700;margin-top:2px">→</span><div><div style="font-weight:600;font-size:15px">Drei Arten von Korrekturen</div><div style="color:rgba(234,236,239,0.70);font-size:13.5px;line-height:1.5;margin-top:3px">Text, Sprache oder Zeichnung im Bild — an den Timecode gebunden.</div></div></div>
+          <div style="display:flex;gap:13px;align-items:flex-start;padding:16px 0;border-bottom:1px solid rgba(234,236,239,0.09)"><span style="color:#ffc400;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:700;margin-top:2px">→</span><div><div style="font-weight:600;font-size:15px">Jede Länge</div><div style="color:rgba(234,236,239,0.70);font-size:13.5px;line-height:1.5;margin-top:3px">Das Scrubbing funktioniert auch bei einer 4-Stunden-Datei.</div></div></div>
+          <div style="display:flex;gap:13px;align-items:flex-start;padding:16px 0;border-bottom:1px solid rgba(234,236,239,0.09)"><span style="color:#ffc400;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:700;margin-top:2px">→</span><div><div style="font-weight:600;font-size:15px">Download</div><div style="color:rgba(234,236,239,0.70);font-size:13.5px;line-height:1.5;margin-top:3px">Der fertige Film und die DaVinci-Projektdatei.</div></div></div>
+          <div style="display:flex;gap:13px;align-items:flex-start;padding:16px 0;border-bottom:1px solid rgba(234,236,239,0.09)"><span style="color:#ffc400;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:700;margin-top:2px">→</span><div><div style="font-weight:600;font-size:15px">Konto mit Login</div><div style="color:rgba(234,236,239,0.70);font-size:13.5px;line-height:1.5;margin-top:3px">Jeder Kunde sieht nur seine eigenen Projekte.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:48px 0 70px;border-top:1px solid rgba(234,236,239,0.09);text-align:center" data-screen-label="More">
+    <div style="max-width:1180px;margin:0 auto;padding:0 28px;display:flex;flex-direction:column;align-items:center">
+      <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(234,236,239,0.50)">In Arbeit</div>
+      <h3 style="font-family:'Anton','Arial Black',Impact,sans-serif;font-weight:400;font-size:clamp(24px,3vw,38px);text-transform:uppercase;margin:12px 0 0">Weitere Tools sind unterwegs.</h3>
+      <a href="cum-lucram.html#contact" style="display:inline-flex;margin-top:24px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#000;background:#ffc400;border-radius:9999px;padding:15px 28px;transition:background .2s ease,transform .2s ease" style-hover="color:#000;background:#ffd333;transform:translateY(-2px)">Projekt besprechen →</a>
+    </div>
+  </section>
+
+  <footer style="border-top:1px solid rgba(234,236,239,0.12)">
+    <div style="max-width:1180px;margin:0 auto;padding:56px 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px;align-items:start">
+      <div>
+        <div style="font-family:'Anton','Arial Black',Impact,sans-serif;font-size:22px;letter-spacing:0.04em;text-transform:uppercase">Your <span style="color:#ffc400">Editor</span></div>
+        <p style="margin:14px 0 0;color:rgba(234,236,239,0.50);font-size:14px;line-height:1.6;max-width:260px">Ausgelagerte Postproduktion für Hochzeitsvideografen.</p>
+      </div>
+      <div>
+        <div style="color:rgba(234,236,239,0.50);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:14px">Kontakt</div>
+        <div style="display:flex;flex-direction:column;gap:13px;margin-top:2px;font-size:15px;line-height:1.3">
+          <a href="https://wa.me/37379840751" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;color:rgba(234,236,239,0.70);transition:color .2s ease" style-hover="color:#ffc400">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M21 16.5v2.6a1.7 1.7 0 0 1-1.9 1.7 17 17 0 0 1-7.4-2.6 16.7 16.7 0 0 1-5.1-5.1A17 17 0 0 1 4 5.7 1.7 1.7 0 0 1 5.7 4h2.6a1.7 1.7 0 0 1 1.7 1.5c.1.8.3 1.5.6 2.2a1.7 1.7 0 0 1-.4 1.8l-1 1a13.5 13.5 0 0 0 5.1 5.1l1-1a1.7 1.7 0 0 1 1.8-.4c.7.3 1.4.5 2.2.6a1.7 1.7 0 0 1 1.4 1.7z"></path></svg>
+            <span>WhatsApp</span>
+          </a>
+          <a href="https://t.me/alexqabl" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;color:rgba(234,236,239,0.70);transition:color .2s ease" style-hover="color:#ffc400">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M21 4 10.5 14.5"></path><path d="M21 4 14.5 21l-4-8.5L2 8.5 21 4z"></path></svg>
+            <span>Telegram</span>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61591004736764&amp;locale=ru_RU" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;color:rgba(234,236,239,0.70);transition:color .2s ease" style-hover="color:#ffc400">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M17 3h-3a4 4 0 0 0-4 4v3H7v4h3v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h2z"></path></svg>
+            <span>Facebook</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1180px;margin:0 auto;padding:0 28px 40px;color:rgba(234,236,239,0.26);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.04em">© 2026 Your Editor</div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { w: typeof window !== 'undefined' ? window.innerWidth : 1280, menu: false, go1: false, lit: false, go2: false };
+  componentDidMount() {
+    this.onResize = () => this.setState({ w: window.innerWidth });
+    window.addEventListener('resize', this.onResize);
+    this.t = [
+      setTimeout(() => this.setState({ go1: true }), 400),
+      setTimeout(() => this.setState({ lit: true }), 1600),
+      setTimeout(() => this.setState({ go2: true }), 1900),
+    ];
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+    this.t.forEach(clearTimeout);
+    document.body.style.overflow = '';
+  }
+  setMenu(open) {
+    document.body.style.overflow = open ? 'hidden' : '';
+    this.setState({ menu: open });
+  }
+  renderVals() {
+    const { w, menu, go1, lit, go2 } = this.state;
+    const mob = w <= 760;
+    const lg = w > 860, md = w > 560;
+    return {
+      desk: !mob, mob, revOrder: mob ? 0 : 2, wide: w > 960, narrow: w <= 960,
+      toggleMenu: () => this.setMenu(!menu),
+      closeMenu: () => this.setMenu(false),
+      bar1: menu ? 'translateY(7px) rotate(45deg)' : 'none',
+      bar2: menu ? 0 : 1,
+      bar3: menu ? 'translateY(-7px) rotate(-45deg)' : 'none',
+      menuOpacity: menu ? 1 : 0,
+      menuPE: menu ? 'auto' : 'none',
+      menuHidden: menu ? 'false' : 'true',
+      seg1: go1 ? 'scaleX(1)' : 'scaleX(0)',
+      seg2: go2 ? 'scaleX(1)' : 'scaleX(0)',
+      nodeBorder: lit ? '#ffc400' : 'rgba(234,236,239,0.16)',
+      litO: lit ? 1 : 0,
+      fillT: lit ? 'scale(1)' : 'scale(0)',
+      badgeT: lit ? 'translateX(-50%) translateY(0)' : 'translateX(-50%) translateY(6px)',
+      numColor: lit ? '#000' : '#ffc400',
+      bCols: lg ? 'repeat(4,1fr)' : md ? 'repeat(2,1fr)' : '1fr',
+      bRows: lg ? '1fr 1fr auto' : 'auto',
+      b1Min: lg ? '320px' : '240px',
+      a1: lg ? '1 / 1 / 3 / 3' : md ? 'auto / 1 / auto / 3' : 'auto',
+      a2: lg ? '1 / 3 / 2 / 5' : 'auto',
+      a3: lg ? '2 / 3 / 3 / 4' : 'auto',
+      a4: lg ? '2 / 4 / 3 / 5' : md ? 'auto / 1 / auto / 3' : 'auto',
+      a5: lg ? '3 / 1 / 4 / 5' : md ? 'auto / 1 / auto / 3' : 'auto',
+    };
+  }
+}
+</script>
+</body>
+</html>

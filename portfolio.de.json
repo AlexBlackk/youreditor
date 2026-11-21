@@ -1,0 +1,119 @@
+[
+  {
+    "title": "EDUARD & CHRISTIE",
+    "poster": "https://pub-6efa91f0c42044c4a9f842cf6bce8ffc.r2.dev/eduard-christie.jpg",
+    "video": "https://pub-6efa91f0c42044c4a9f842cf6bce8ffc.r2.dev/eduard-christie.mp4",
+    "type": "Kinofilm",
+    "turnaround": "4 Tage",
+    "footage": "640 GB",
+    "cameras": "2",
+    "tags": [
+      "Multicam",
+      "Sync",
+      "Ton",
+      "Color"
+    ]
+  },
+  {
+    "title": "Henri & Masha",
+    "poster": "https://pub-6efa91f0c42044c4a9f842cf6bce8ffc.r2.dev/henri-masha.jpg",
+    "video": "https://pub-6efa91f0c42044c4a9f842cf6bce8ffc.r2.dev/henri-masha.mp4",
+    "type": "Highlight",
+    "turnaround": "2 Tage",
+    "footage": "410 GB",
+    "cameras": "2",
+    "tags": [
+      "Multicam",
+      "Sync",
+      "Ton",
+      "Color"
+    ]
+  },
+  {
+    "title": "Andrian & Maria",
+    "poster": "https://pub-6efa91f0c42044c4a9f842cf6bce8ffc.r2.dev/andrian-maria.jpg",
+    "video": "https://pub-6efa91f0c42044c4a9f842cf6bce8ffc.r2.dev/andrian-maria.mp4",
+    "type": "Kinofilm",
+    "turnaround": "4 Tage",
+    "footage": "455 GB",
+    "cameras": "2",
+    "tags": [
+      "Multicam",
+      "Sync",
+      "Ton",
+      "Color"
+    ]
+  },
+  {
+    "title": "Tibo & Agatha",
+    "poster": "https://pub-6efa91f0c42044c4a9f842cf6bce8ffc.r2.dev/tibo-agatha.jpg",
+    "video": "https://pub-6efa91f0c42044c4a9f842cf6bce8ffc.r2.dev/tibo-agatha.mp4",
+    "type": "Highlight",
+    "turnaround": "2 Tage",
+    "footage": "715 GB",
+    "cameras": "2",
+    "tags": [
+      "Multicam",
+      "Sync",
+      "Ton",
+      "Color"
+    ]
+  },
+  {
+    "title": "FRANCOIS-XAVIER & MARIANNA",
+    "poster": "https://pub-6efa91f0c42044c4a9f842cf6bce8ffc.r2.dev/francois-marianna.jpg",
+    "video": "https://pub-6efa91f0c42044c4a9f842cf6bce8ffc.r2.dev/francois-marianna.mp4",
+    "type": "Kinofilm",
+    "turnaround": "4 Tage",
+    "footage": "780 GB",
+    "cameras": "1",
+    "tags": [
+      "Sync",
+      "Ton",
+      "Color"
+    ]
+  },
+  {
+    "title": "Alina & Will",
+    "poster": "https://pub-6efa91f0c42044c4a9f842cf6bce8ffc.r2.dev/alina-will.jpg",
+    "video": "https://pub-6efa91f0c42044c4a9f842cf6bce8ffc.r2.dev/alina-will.mp4",
+    "type": "Highlight",
+    "turnaround": "2 Tage",
+    "footage": "530 GB",
+    "cameras": "1",
+    "tags": [
+      "Sync",
+      "Ton",
+      "Color"
+    ]
+  },
+  {
+    "title": "Ramona & Radu",
+    "poster": "https://pub-6efa91f0c42044c4a9f842cf6bce8ffc.r2.dev/ramona-radu.jpg",
+    "video": "https://pub-6efa91f0c42044c4a9f842cf6bce8ffc.r2.dev/ramona-radu.mp4",
+    "type": "Highlight",
+    "turnaround": "2 Tage",
+    "footage": "480 GB",
+    "cameras": "2",
+    "tags": [
+      "Multicam",
+      "Sync",
+      "Ton",
+      "Color"
+    ]
+  },
+  {
+    "title": "Daniel & Sofia",
+    "poster": "https://pub-6efa91f0c42044c4a9f842cf6bce8ffc.r2.dev/daniel-sofia.jpg",
+    "video": "https://pub-6efa91f0c42044c4a9f842cf6bce8ffc.r2.dev/daniel-sofia.mp4",
+    "type": "Highlight",
+    "turnaround": "2 Tage",
+    "footage": "620 GB",
+    "cameras": "1",
+    "tags": [
+      "Sync",
+      "Ton",
+      "Color"
+    ]
+  }
+]
